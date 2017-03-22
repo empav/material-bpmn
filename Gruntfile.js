@@ -15,7 +15,7 @@ module.exports = function (grunt) {
                 options: {
                     paths: [
                         'assets/less',
-                        'bower_components/bootstrap/less'
+                        'node_modules/bootstrap/less'
                     ]
                 },
                 files: {
@@ -120,34 +120,20 @@ module.exports = function (grunt) {
                     // bootstrap
                     {
                         expand: true,
-                        cwd: 'bower_components/bootstrap/dist/css',
+                        cwd: 'node_modules/bootstrap/dist/css',
                         src: ['bootstrap.min.css'],
                         dest: 'dist/css'
                     },
                     // ui-tree
                     {
                         expand: true,
-                        cwd: 'bower_components/angular-ui-tree/dist',
+                        cwd: 'node_modules/angular-ui-tree/dist',
                         src: ['angular-ui-tree.css'],
                         dest: 'dist/css'
                     },
 
-                    //form editor
-                    {
-                        expand: true,
-                        cwd: 'vendor/formEditor/css',
-                        src: ['*'],
-                        dest: 'dist/css'
-                    },
-                    //form editor
-                    {
-                        expand: true,
-                        cwd: 'vendor/formEditor/template',
-                        src: ['*'],
-                        dest: 'dist/LE-template'
-                    },
                     // bootstrap fonts
-                    {expand: true, cwd: 'bower_components/bootstrap/dist/fonts', src: ['*'], dest: 'dist/fonts'},
+                    {expand: true, cwd: 'node_modules/bootstrap/dist/fonts', src: ['*'], dest: 'dist/fonts'},
 
                     // bpmn font
                     {expand: true, cwd: 'node_modules/bpmn-js/assets/bpmn-font/font', src: ['*'], dest: 'dist/fonts'},
@@ -160,7 +146,6 @@ module.exports = function (grunt) {
 
                     // images
                     {expand: true, cwd: 'assets/images', src: ['*'], dest: 'dist/images'},
-                    {expand: true, cwd: 'vendor/formEditor/icons', src: ['*'], dest: 'dist/icons'},
 
                     //Favicon
                     {expand: true, cwd: 'assets/images', src: ['favicon.ico'], dest: 'dist'},
