@@ -811,9 +811,9 @@ var mockData = (function () {
     function getActivePortfolios() {
         return [{
             'name': 'portfolio1-anagrafica - Anagrafica Clienti',
-            'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
+            'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
             'methods': [{
-                'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
+                'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
                 'version': 1.0,
                 'name': 'searchCliente',
                 'returnType': 'java.util.List',
@@ -823,7 +823,7 @@ var mockData = (function () {
                 }]
             },
                 {
-                    'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
+                    'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
                     'version': 1.0,
                     'name': 'caricaElencoIndirizziCliente',
                     'returnType': 'java.util.List',
@@ -833,24 +833,24 @@ var mockData = (function () {
                     }]
                 },
                 {
-                    'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
+                    'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
                     'version': 1.0,
                     'name': 'caricaElencoIndirizziViviCliente',
                     'returnType': 'java.util.List',
                     'parameters': []
                 },
                 {
-                    'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
+                    'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
                     'version': 1.0,
                     'name': 'leggiIndirizzoCliente',
-                    'returnType': 'it.euris.insurance.platform.portfolio.clientedemo.anagrafica_clienti.entities.IndirizzoCliente',
+                    'returnType': 'it.custom.insurance.platform.portfolio.clientedemo.anagrafica_clienti.entities.IndirizzoCliente',
                     'parameters': [{
                         'fieldName': 'arg0',
                         'fieldType': 'Integer'
                     }]
                 },
                 {
-                    'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
+                    'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-anagrafica-services/AnagraficaClientiBusinessService/1.0',
                     'version': 1.0,
                     'name': 'describe',
                     'returnType': 'java.util.List',
@@ -859,26 +859,26 @@ var mockData = (function () {
         },
             {
                 'name': 'portfolio1-vita - Piattaforma Vita',
-                'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                 'methods': [{
-                    'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                    'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                     'version': 1.0,
                     'name': 'describe',
                     'returnType': 'java.util.List',
                     'parameters': []
                 },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'leggiTipologica',
-                        'returnType': 'it.euris.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.Tipologica',
+                        'returnType': 'it.custom.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.Tipologica',
                         'parameters': [{
                             'fieldName': 'arg0',
                             'fieldType': 'TipologicaDTO'
                         }]
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'caricaElencoTipologica',
                         'returnType': 'java.util.List',
@@ -888,106 +888,106 @@ var mockData = (function () {
                         }]
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'generaChiaveContratto',
                         'returnType': 'java.util.UUID',
                         'parameters': []
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'scriviContratto',
-                        'returnType': 'it.euris.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.Contratto',
+                        'returnType': 'it.custom.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.Contratto',
                         'parameters': [{
                             'fieldName': 'arg0',
                             'fieldType': 'ContrattoDTO'
                         }]
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'caricaElencoProposteDaAutorizzare',
                         'returnType': 'java.util.List',
                         'parameters': []
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'caricaElencoContrattiAttivi',
                         'returnType': 'java.util.List',
                         'parameters': []
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'generaChiaveRuoloContratto',
                         'returnType': 'java.util.UUID',
                         'parameters': []
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'scriviRuoloContratto',
-                        'returnType': 'it.euris.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.RuoliContratto',
+                        'returnType': 'it.custom.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.RuoliContratto',
                         'parameters': [{
                             'fieldName': 'arg0',
                             'fieldType': 'RuoliContrattoDTO'
                         }]
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'generaChiaveIndirizziRuoloContratto',
                         'returnType': 'java.util.UUID',
                         'parameters': []
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'scriviIndirizzoRuoloContratto',
-                        'returnType': 'it.euris.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.IndirizziRuoliContratto',
+                        'returnType': 'it.custom.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.IndirizziRuoliContratto',
                         'parameters': [{
                             'fieldName': 'arg0',
                             'fieldType': 'IndirizziRuoliContrattoDTO'
                         }]
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'generaChiaveCopertura',
                         'returnType': 'java.util.UUID',
                         'parameters': []
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'scriviCopertura',
-                        'returnType': 'it.euris.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.Premi',
+                        'returnType': 'it.custom.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.Premi',
                         'parameters': [{
                             'fieldName': 'arg0',
                             'fieldType': 'PremiDTO'
                         }]
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'scriviCopertura',
-                        'returnType': 'it.euris.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.Copertura',
+                        'returnType': 'it.custom.insurance.platform.portfolio.clientedemo.piattaforma_vita.entities.Copertura',
                         'parameters': [{
                             'fieldName': 'arg0',
                             'fieldType': 'CoperturaDTO'
                         }]
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'generaChiavePremio',
                         'returnType': 'java.util.UUID',
                         'parameters': []
                     },
                     {
-                        'source': 'it.euris.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
+                        'source': 'it.custom.insurance.platform.portfolio.business-services:pf-portfolio1-vita-services/PiattaformaVitaBusinessService/1.0',
                         'version': 1.0,
                         'name': 'generaChiavePremioCopertura',
                         'returnType': 'java.util.UUID',

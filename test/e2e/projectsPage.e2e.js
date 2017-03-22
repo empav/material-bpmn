@@ -16,7 +16,7 @@ describe('Testing Home page (projects)', function () {
     });
 
     it('should have a title in the browser tab', function () {
-        expect(browser.getTitle()).to.eventually.eq('Euris Workbench');
+        expect(browser.getTitle()).to.eventually.eq('custom Workbench');
     });
 
     it('projects table should have 10 rows at first', function () {

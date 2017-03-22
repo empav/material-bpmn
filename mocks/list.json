@@ -1,9 +1,9 @@
 {
     "responseEntity": [
         {
-            "name": "pf-lisa",
-            "label": "pf-lisa",
-            "description": "pf-lisa",
+            "name": "pf-custom",
+            "label": "pf-custom",
+            "description": "pf-custom",
             "source": null
         }
     ],

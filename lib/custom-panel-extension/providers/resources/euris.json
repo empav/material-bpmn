@@ -1,8 +1,8 @@
 
     {
-        "name": "Euris",
-        "uri": "http://euris.it/schema/1.0/bpmn",
-        "prefix": "euris",
+        "name": "custom",
+        "uri": "http://custom.it/schema/1.0/bpmn",
+        "prefix": "custom",
         "xml": {
             "tagAlias": "lowerCase"
         },

@@ -243,7 +243,7 @@ module.exports = function (grunt) {
                     patterns: [
                         {
                             match: 'context',
-                            replacement: '/euris/workbench'
+                            replacement: '/custom/workbench'
                         },
                         {
                             match: 'minification',
@@ -251,11 +251,11 @@ module.exports = function (grunt) {
                         },
                         {
                             match: 'logo',
-                            replacement: '/euris/workbench'
+                            replacement: '/custom/workbench'
                         },
                         {
                             match: 'materialIcons',
-                            replacement: '/euris/workbench'
+                            replacement: '/custom/workbench'
                         }
                     ]
                 },
