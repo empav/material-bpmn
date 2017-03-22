@@ -1,0 +1,73 @@
+
+<nav class="navbar navbar-fixed-top navbar-primary">
+    <!--
+    navbar navbar-default navbar-fixed-top navbar-color-on-scroll navbar-transparent
+-->
+    <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="hamburger" ng-click="vm.toogleSidebar()">
+                    <i class="material-icons">reorder</i>
+                </a>
+            </li>
+        </ul>
+        <div class="navbar-header" ng-click="vm.goDashboard()">
+            <img ng-src="@@logo/images/logo_lisa.svg"/>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group form-group-search">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                    <i class="material-icons">search</i>
+                </button>
+            </form>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="material-icons">notifications</i>
+                    <span class="notification">5</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Izabela responded to your email</a></li>
+                    <li><a href="#">You have 5 new tasks</a></li>
+                    <li><a href="#">Emanuele joined this team</a></li>
+                    <li><a href="#">Another Notification</a></li>
+                    <li><a href="#">Another One</a></li>
+                </ul>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="home.profile" class="dropdown-toggle">
+                    <i class="material-icons">person</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div id="sidebar" class="sidebar" data-color="lisa" ng-class="{'closed':vm.sidebarClosed}">
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li ui-sref-active="active">
+                <a ui-sref="home.dashboard">
+                    <i class="material-icons">dashboard</i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="home.projects">
+                    <i class="material-icons">content_paste</i>
+                    <p>Projects</p>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="home.profile">
+                    <i class="material-icons">person</i>
+                    <p>Profile</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

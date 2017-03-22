@@ -1,0 +1,28 @@
+<div class="rules-panel">
+    <div class="bpp-properties-panel">
+        <div class="bpp-properties">
+            <div class="bpp-properties-header">
+                <h3>Show Rules</h3>
+            </div>
+            <div class="bpp-properties-tabs-container">
+                <div class="bpp-properties-tab bpp-active">
+                    <table>
+                        <tr>
+                            <th class="col-xs-6">Rule Name</th>
+                            <th class="col-xs-5">Rule Description</th>
+                            <th class="col-xs-1">Id</th>
+                        </tr>
+
+                        <tbody>
+                            <tr ng-repeat="rule in vm.rules | orderBy:'id'" ng-class="{used: rule.used}">
+                                <td class="col-xs-6" ng-bind="rule.name"></td>
+                                <td class="col-xs-5" ng-bind="rule.description"></td>
+                                <td class="col-xs-1" ng-bind="rule.id"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

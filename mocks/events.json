@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "eventName": "payment",
+        "eventType": "payment message event",
+        "eventLabel": "payment"
+    },
+    {
+        "id": 2,
+        "eventName": "solvency check",
+        "eventType": "finance",
+        "eventLabel": "solvency check"
+    }
+]

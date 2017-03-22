@@ -1,0 +1,303 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-8" ng-class="{'col-xs-offset-2': !vm.project}">
+            <div class="card card-clean">
+                <div class="header header-projects" data-background-color="lisa">
+                    <h6 class="title">Project details</h6>
+                    <p class="category">{{vm.project.name | uppercase}}</p>
+                </div>
+
+                <div class="content">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group label-floating form-warning">
+                                    <label class="control-label">Name</label>
+                                    <input type="text" class="form-control" value="Name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">Short description</label>
+                                    <input type="text" class="form-control" value="short_description">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group label-floating form-warning">
+                                    <label class="control-label">Effective date</label>
+                                    <input type="date" class="form-control" value="24/02/2017">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group label-floating form-warning">
+                                    <label class="control-label">Expiry date</label>
+                                    <input type="date" class="form-control" value="24/02/2017">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="control-label">Project state</label>
+                                <div class="dropdown">
+                                    <a href="#" class="btn btn-sm btn-gray dropdown-toggle" data-toggle="dropdown"
+                                       aria-expanded="false">
+                                        choose a state
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">active</a></li>
+                                        <li><a href="#">obsolete</a></li>
+                                        <li><a href="#">verify</a></li>
+                                        <li><a href="#">in progress</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                    <label class="control-label">Portofolios</label>
+                                    <div class="dropdown">
+                                        <a href="#" class="btn btn-sm btn-gray dropdown-toggle" data-toggle="dropdown"
+                                           aria-expanded="false">
+                                            choose a portofolio
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Portfolio1</a></li>
+                                            <li><a href="#">Portfolio2</a></li>
+                                            <li><a href="#">Portfolio3</a></li>
+                                            <li><a href="#">Portfolio4</a></li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                    <label class="control-label">Channels</label>
+                                    <div class="dropdown">
+                                        <a href="#" class="btn btn-sm btn-gray dropdown-toggle" data-toggle="dropdown"
+                                           aria-expanded="false">
+                                            choose a channel
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Channel1</a></li>
+                                            <li><a href="#">Channel2</a></li>
+                                            <li><a href="#">Channel3</a></li>
+                                            <li><a href="#">Channel4</a></li>
+                                        </ul>
+                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                    <label class="control-label">Process family</label>
+                                    <div class="dropdown">
+                                        <a href="#" class="btn btn-sm btn-gray dropdown-toggle" data-toggle="dropdown"
+                                           aria-expanded="false">
+                                            Choose a family
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Family1</a></li>
+                                            <li><a href="#">Family2</a></li>
+                                            <li><a href="#">Family3</a></li>
+                                            <li><a href="#">Family4</a></li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                    <label class="control-label">Company codes</label>
+                                    <div class="dropdown">
+                                        <a href="#" class="btn btn-sm btn-gray dropdown-toggle" data-toggle="dropdown"
+                                           aria-expanded="false">
+                                            Choose a code
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Code1</a></li>
+                                            <li><a href="#">Code2</a></li>
+                                            <li><a href="#">Code3</a></li>
+                                            <li><a href="#">Code4</a></li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group label-floating form-warning">
+                                    <label class="control-label">Exit state</label>
+                                    <input type="text" class="form-control" value="Obsolete">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group label-floating form-warning">
+                                    <label class="control-label">Last edit date</label>
+                                    <input type="date" class="form-control" disabled value="24/02/2017">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group label-floating form-warning">
+                                    <label class="control-label">Creation date</label>
+                                    <input type="date" class="form-control" disabled value="24/02/2017">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-sm btn-primary pull-right" ng-click="vm.createOrUpdate()">
+                            {{vm.project ? 'Update' : 'Create'}}
+                        </button>
+
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4" ng-if="vm.project">
+
+            <div class="col-xs-12">
+                <div class="pull-right dropdown">
+                    <a href="#" class="btn-just-icon btn btn-gray dropdown-toggle" rel="tooltip" title=""
+                       data-original-title="Color filter" data-toggle="dropdown" aria-expanded="false">
+                        <i class="material-icons">filter_list</i>
+                        <div class="ripple-container"></div>
+                    </a>
+                    &nbsp;
+                    <a href="newDiagram.html" class="btn btn-just-icon btn-gray" rel="tooltip" title=""
+                       data-original-title="Go to project">
+                        <i class="material-icons">call_made</i>
+                    </a>
+                    &nbsp;
+                    <a href="newDiagram.html" class="btn btn-just-icon btn-gray" rel="tooltip" title=""
+                       data-original-title="Clone project">
+                        <i class="material-icons">content_copy</i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Blue</a></li>
+                        <li><a href="#">Green</a></li>
+                        <li><a href="#">Orange</a></li>
+                        <li><a href="#">Red</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="card card-stats">
+                    <a href="project_list.html">
+                        <div class="header header-warning">
+                            <i class="material-icons">speaker_notes</i>
+                        </div>
+                    </a>
+                    <div class="content">
+                        <p class="category">Recent projects</p>
+                        <h3 class="title">20/50
+                            <small>Created</small>
+                        </h3>
+                    </div>
+                    <div class="footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> Last 24 Hours
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="card card-stats">
+                    <a href="project_list.html">
+                        <div class="header header-success">
+                            <i class="material-icons">speaker_notes</i>
+                        </div>
+                    </a>
+                    <div class="content">
+                        <p class="category">Recent projects</p>
+                        <h3 class="title">20/50
+                            <small>Created</small>
+                        </h3>
+                    </div>
+                    <div class="footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> Last 24 Hours
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="card card-stats">
+                    <a href="project_list.html">
+                        <div class="header header-danger">
+                            <i class="material-icons">speaker_notes</i>
+                        </div>
+                    </a>
+                    <div class="content">
+                        <p class="category">Recent projects</p>
+                        <h3 class="title">20/50
+                            <small>Created</small>
+                        </h3>
+                    </div>
+                    <div class="footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> Last 24 Hours
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="card card-stats">
+                    <a href="project_list.html">
+                        <div class="header header-info">
+                            <i class="material-icons">create</i>
+                        </div>
+                    </a>
+                    <div class="content">
+                        <div class="form-group">
+                            <label>Note title</label>
+                            <input type="text" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Text</label>
+                            <input type="text" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="col-xs-6">
+                            <div class="dropdown">
+                                <a href="#" class="btn btn-sm btn-white dropdown-toggle" data-toggle="dropdown"
+                                   aria-expanded="false">
+                                    choose a color
+                                    <div class="ripple-container"></div>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Blue</a></li>
+                                    <li><a href="#">Green</a></li>
+                                    <li><a href="#">Orange</a></li>
+                                    <li><a href="#">Red</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="btn pull-right btn-sm btn-primary">
+                                Send
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

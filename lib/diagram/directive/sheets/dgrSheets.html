@@ -1,0 +1,18 @@
+<div class="sheets-panel">
+    <div class="sheets-panel-tabs">
+        <div class="btn btn-default scroller scroller-left"><i class="glyphicon glyphicon-chevron-left"></i></div>
+        <div class="btn btn-default scroller scroller-right"><i class="glyphicon glyphicon-chevron-right"></i></div>
+        <div class="wrapper">
+            <ul class="nav nav-tabs list" data-color="transparent">
+                <li ng-repeat="res in vm.workbench.sheets track by $index" ng-class="{'active' : res.active}">
+                    <a ng-click="vm.setActive(res,$index)">{{res.resourceName}}{{res.cfgResourceTypes ? '.' + res.cfgResourceTypes.description.toLowerCase() : ''}}
+                        <i class="glyphicon glyphicon-remove"
+                           ng-click="vm.remove($index,res.cfgResourceTypes.id)"
+                           ng-if="vm.workbench.sheets.length > 1"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="sheets-panel-sheet"></div>
+</div>

@@ -1,0 +1,14 @@
+{
+    "operationResult": "OK",
+    "messages": [],
+    "list": [
+        {
+            "resourceId": "id11",
+            "resourceName": "form_contraente"
+        },
+        {
+            "resourceId": "id22",
+            "resourceName": "form_anagrafica"
+        }
+    ]
+}

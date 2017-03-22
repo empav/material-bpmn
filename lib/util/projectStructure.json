@@ -1,0 +1,60 @@
+
+{
+    "projectId":"",
+    "projectName":"",
+    "channels":[
+        {
+            "k_tipoCanaleVendita": "",
+            "cod_tipoCanaleVendita": "",
+            "des_tipoCanaleVendita": "",
+        }],
+    "companyCodes":[
+        {
+            "k_compagnia": "",
+            "cod_compagnia": "",
+            "des_compagnia": "",
+        }],
+    "portfolios":[{
+        "k_portafogli": "",
+        "cod_portafogli": "",
+        "des_portafogli": "",
+    }],
+    "processFamily":[
+        {
+            "processId": "",
+            "processName": ""
+        }
+    ],
+    "interactivity":{
+        "k_interattivita":"",
+        "cod_interattivita":"",
+        "des_interattivita":"",
+    },
+    "shortDescription":"",
+    "longDescription":"",
+    "notes":[{
+        "cod_nota": "",
+        "des_nota": "",
+        "tipo_nota": "",
+        "data_creazione": "",
+    }],
+    "projectState":{
+        "k_statoProg": "",
+        "cod_statoProg": "",
+        "des_statoProg": "",
+    },
+    "exitState":{
+        "k_statoUscita":"",
+        "cod_statoUscita":"",
+        "des_statoUscita":"",
+    },
+    "exitStateList":[{
+        "k_statoUscita":"",
+        "cod_statoUscita":"",
+        "des_statoUscita":"",
+    }],
+    "effectiveDate":"",
+    "expiringDate":"",
+    "creationDate":"",
+    "lastModifyDate":""
+}

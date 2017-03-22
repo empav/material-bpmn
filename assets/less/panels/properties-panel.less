@@ -1,0 +1,313 @@
+#js-properties-panel, #properties {
+    background: #FAFAFA;
+}
+
+.bpp-properties-panel {
+    .bpp-properties-group:hover, .bpp-properties-group:focus, .bpp-properties-group:active {
+        // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.14);
+        box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.14), inset 0px -1px 2px rgba(0, 0, 0, 0.14);
+        background-color: #F3F3F3;
+    }
+
+    .bpp-properties-group:hover > .group-toggle {
+        background-color: #CFCFCF;
+    }
+
+    .bpp-properties-group:hover > .group-toggle:hover {
+        background-color: #004785;
+    }
+
+    .bpp-properties-group.group-closed {
+        max-height: 26px;
+        border-top: none;
+        cursor: pointer;
+        background-color: rgba(206, 206, 206, 0.2);
+        padding-top: 0;
+        padding-bottom: 0;
+        border-bottom: 1px solid #CCCCCC;
+    }
+    .bpp-properties-group.group-closed > div {
+        visibility: hidden;
+    }
+    .bpp-properties-group.group-closed > .group-label {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .group-closed .group-label {
+        background: transparent;
+    }
+
+    .bpp-properties-group.group-closed:hover > .group-label {
+        color: #a3a3a3;
+    }
+
+    .bpp-properties-panel .bpp-properties-group.group-closed {
+        max-height: 26px;
+        border-top: none;
+        background-color: rgba(206, 206, 206, 0.2);
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .bpp-listener-area {
+        border: 1px solid #ccc;
+        margin: 10px 1px;
+        padding: 10px;
+        border-radius: 3px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.14);
+        background: #FFFFFF;
+        margin-bottom: 30px;
+    }
+
+    background: transparent;
+    border-radius: 3px;
+    color: rgba(0,0,0, 0.87);
+
+    .bpp-textfield input {
+        padding-right: 28px;
+        width: 100%;
+    }
+    button.amount.clear {
+        top: 70px;
+    }
+
+    button.intervals.clear {
+        top: 80px;
+    }
+
+    button.amountCycle.clear {
+        top: 177px;
+    }
+
+    .doSelection {
+        top: 36px !important;
+        width: 120px !important;
+        z-index: 20;
+        right: 15px;
+    }
+
+    input.form-control {
+        height: 24px !important;
+    }
+
+    textarea:focus, input[type=text]:focus {
+        border-color: #f39200 !important;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    textarea, input[type=text] {
+        width: 100%;
+        padding: 5px;
+        border-width: 0px !important;
+        border-bottom: 2px solid #c2c2c2 !important;
+        outline: none;
+        background-color: transparent;
+    }
+    .bpp-textfield, .bpp-textarea{
+        textarea, input[type=text] {
+            border-width: 0px !important;
+        }
+
+        .bpp-field-wrapper {
+            width:100%;
+            color: #666;display:inline-block;
+            margin:0;
+            text-transform:uppercase;
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        .bpp-field-wrapper:hover {
+            width:100%;
+            color: #666;display:inline-block;
+            margin:0;
+            text-transform:uppercase;
+            border-bottom: 0;
+        }
+
+        .bpp-field-wrapper:after {
+                display:block;
+                content: '';
+                border-bottom: solid 2px #f39200;
+                transform: scaleX(0);
+                transition: transform 250ms ease-in-out;
+        }
+        .bpp-field-wrapper:hover:after { transform: scaleX(1); }
+    }
+
+    input, button, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+    option {
+        border: none !important;
+        background: #FAFAFA;
+        color: #333;
+    }
+
+    select {
+        font-family: inherit;
+        background-color: transparent;
+        width: 100%;
+        padding: 4px 0;
+        font-size: 16px;
+        color: #333333;
+        border: none;
+        height: 30px;
+    }
+
+    select:focus, select:hover {
+        outline: none;
+    }
+
+    button:hover,
+    button:focus,
+    button:active {
+        background-color: #EAEAEA !important;
+        --webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+        -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+        box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+        border: 1px solid #ccc !important;
+        color: #000000 !important;
+    }
+
+    button {
+        height: 23px;
+        overflow: hidden;
+        cursor: pointer;
+        background-color: #f8f8f8;
+        color: #333;
+        border: 1px solid #ccc;
+    }
+
+
+    .add, .clear {
+        margin: 0 0px 8px;
+        height: 20px;
+        min-width: 20px;
+        width: 20px;
+        border-radius: 50%;
+        font-size: 12px;
+        padding: 0;
+        overflow: hidden;
+        line-height: normal;
+        background: transparent;
+        border: 1px solid #CCC !important;
+    }
+
+    .add:hover, .add:focus, .add:active,
+    .clear:hover, .clear:focus, .clear:active {
+        color: #d30005;
+        background-color: #F5F5F5;
+        border-color: #adb8c0;
+        --webkit-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.4) !important;
+        -moz-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.4) !important;
+        box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    input[type=checkbox] {
+        margin-right: 4px;
+        -webkit-appearance: none;
+        background-color: #FFF;
+        border: 1px solid #cacece;
+        padding: 8px;
+        border-radius: 3px;
+        display: inline-block;
+        position: relative;
+    }
+
+    input[type=checkbox]:active, .regular-checkbox:checked:active {
+        --webkit-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.4) !important;
+        -moz-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.4) !important;
+        box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    input[type=checkbox]:checked {
+        background-color: #F5F5F5;
+        border: 1px solid rgba(176, 176, 176, 0.54);;
+        --webkit-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.4) !important;
+        -moz-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.4) !important;
+        box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.4) !important;
+        color: #99a1a7;
+    }
+
+    input[type=checkbox]:checked:after {
+        content: '\2714';
+        font-size: 12px;
+        position: absolute;
+        top: 0px;
+        left: 3px;
+        color: #99a1a7;
+    }
+
+
+    input[type=radio] {
+        -webkit-appearance: none;
+        background-color: #FFF;
+        border: 1px solid rgba(0,0,0, .54);
+        padding: 9px;
+        border-radius: 50px;
+        display: inline-block;
+        position: relative;
+    }
+
+    input[type=radio]:checked:after {
+        content: ' ';
+        width: 12px;
+        height: 12px;
+        border-radius: 50px;
+        position: absolute;
+        top: 3px;
+        background: #99a1a7;
+        --webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+        -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+        box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+        text-shadow: 0px;
+        left: 3px;
+        font-size: 32px;
+    }
+
+    input[type=radio]:checked {
+        background-color: #F5F5F5;
+        color: #99a1a7;
+        border: 1px solid rgba(176, 176, 176, 0.54);;
+        --webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+        -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+        box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    input[type=radio]:active, input[type=radio]:checked:active {
+        --webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+        -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+        box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    ul.bpp-properties-tabs-links > li > a {
+        display: inline-block;
+        font-size: 12px;
+        padding: 4px 7px;
+        border: 1px solid #ccc;
+        border-radius: 3px 3px 0 0;
+        border-bottom: transparent;
+        background: transparent;
+        color: #666;
+        text-decoration: none;
+    }
+
+    input.bpp-table-row-columns-2.bpp-table-row-removable {
+        width: ~"calc(50% - 20px)";
+        margin: 2px;
+    }
+    .label, label, .group-label {
+        border-radius: 0px ;
+        background-color: transparent;
+        color: #333333;
+    }
+}

@@ -1,0 +1,400 @@
+#tree-do {
+
+    [ui-tree-handle] {
+        cursor: default;
+
+        .btn-collapse {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .tree-node-content {
+        margin: 15px;
+
+        .tree-node-checkbox {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .tree-node-do-name {
+            text-transform: uppercase;
+        }
+
+        ul {
+            li {
+                padding: 0;
+                & > a {
+                    margin: 0;
+                }
+            }
+            li:nth-child(1), li:nth-child(4) {
+                margin-left: 15px;
+            }
+
+        }
+    }
+
+    .tree-node-cardinality, .tree-node-imported {
+        font-size: 10px;
+        margin-left: 5px;
+    }
+
+    .tree-node {
+        border: 1px solid #ccc;
+        background: #f8faff;
+        color: #3c3c3c;
+    }
+    .angular-ui-tree-handle {
+        background: #f8faff;
+        border: 1px solid #ccc;
+        color: #3c3c3c;
+        padding: 10px 10px;
+    }
+
+    .import-checkbox {
+        margin-right: 5px;
+    }
+
+    .node-checked {
+        background: #ebffee;
+    }
+
+    .angular-ui-tree-nodes .angular-ui-tree-nodes {
+        padding-left: 40px;
+    }
+
+    .angular-ui-tree-handle-error {
+        border: 1px solid red !important;
+    }
+}
+
+.rules-settings-panel {
+    position: absolute;
+    width: 60%;
+    height: 75%;
+    right: ~"-moz-calc(25% + 25px)";
+    right: ~"-webkit-calc(25% + 25px)";
+    right: ~"-o-calc(25% + 25px)";
+    right: ~"calc(25% + 25px)";
+    top: 120px;
+    z-index: 10;
+    overflow: auto;
+    background: #FAFAFA;
+    border: solid 1px #ccc;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+    button {
+        height: 23px;
+        overflow: hidden;
+        cursor: pointer;
+        background-color: #f8f8f8;
+        border: 1px solid #ccc;
+    }
+
+    .btn-selected {
+        background-color: #EEEEEE !important;
+        --webkit-box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+        box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-default {
+        height: 23px;
+        overflow: hidden;
+        cursor: pointer;
+        background-color: #f8f8f8;
+        color: #333;
+        border: 1px solid #ccc;
+    }
+
+    .btn-warning {
+        height: 23px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        color: #f39200;
+        border-left: 6px solid #f39200;
+        span {
+            color: #333 !important;
+        }
+    }
+
+    .btn-info {
+        height: 23px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        color: #333;
+        border-left: 6px solid #46b8da;
+        span {
+            color: #333 !important;
+        }
+    }
+
+    .btn-primary {
+        height: 23px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        color: #00396a;
+        border-left: 6px solid #00396a;
+        span {
+            color: #333 !important;
+        }
+    }
+
+    .btn-danger {
+        top: 0px;
+        position: absolute;
+        background-color: #d9534f !important;
+        right: 10px;
+        span {
+            color: #333;
+        }
+    }
+
+    .btn {
+        display: inline-block;
+        margin-bottom: 3px;
+        font-weight: 200;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        background-image: none;
+        background-color: #f8f8f8;
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: 11px;
+        line-height: 1;
+        border-radius: 0px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .material-icons {
+        line-height: 0.66;
+    }
+
+    input.form-control {
+        height: 24px;
+    }
+
+    .panel-divider {
+        border-top-width: thin;
+        border-top-style: solid;
+        border-top-color: #ccc;
+        margin-bottom: 12px;
+        margin-top: 11px;
+        padding-top: 12px;
+    }
+
+    .search-bar {
+        margin-bottom: 12px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .label {
+        color: #666;
+        font-size: 120%;
+        font-weight: bolder;
+        display: inline;
+        padding: .2em .6em .3em;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: .25em;
+    }
+
+    .data-objects-scroll-view {
+        max-height: 700px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+        border-radius: 5px;
+        overflow-y: auto;
+    }
+
+    .btn {
+        .glyphicon {
+            right: 4px;
+        }
+    }
+
+    ul {
+        float: right;
+        list-style-type: none;
+    }
+
+    ol {
+        list-style-type: none;
+        i.material-icons {
+            width: 24px;
+            height: 24px;
+            line-height: 1;
+            margin-right: 10px;
+        }
+    }
+
+    .doElement {
+        background-color: #EEEEEE;
+        width: 100%;
+        border: 1px solid #CCCCCC;
+        height: 28px;
+        color: #888888;
+        margin-bottom: 10px;
+        padding: 1px;
+        padding-left: 10px;
+    }
+
+    input[type=text]:focus {
+        border-color: #f39200;
+        -webkit-box-shadow: 0px 0px 0px -200px rgba(0, 0, 0, 0);
+        -moz-box-shadow: 0px 0px 0px -200px rgba(0, 0, 0, 0);
+        box-shadow: 0px 0px 0px -200px rgba(0, 0, 0, 0);
+    }
+
+    input[type=text] {
+        width: 100%;
+        padding: 5px;
+        border: none;
+        border-bottom: 2px solid #c2c2c2;
+        outline: none;
+        background-color: transparent;
+    }
+
+    input, button, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        -webkit-box-shadow: 0px 0px 0px -200px rgba(0, 0, 0, 0);
+        -moz-box-shadow: 0px 0px 0px -200px rgba(0, 0, 0, 0);
+        box-shadow: 0px 0px 0px -200px rgba(0, 0, 0, 0);
+    }
+
+    .doIstance {
+        background-color: #FDFDFD;
+        width: 100%;
+        border: 1px solid #CCCCCC;
+        height: 28px;
+        color: #888888;
+        margin-bottom: 10px;
+        padding: 1px;
+        cursor: pointer;
+        padding-left: 10px;
+    }
+    .istanceTreeContainer {
+        width: 95%;
+    }
+
+}
+
+.data-objects-panel {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    overflow: hidden;
+    background: #eee;
+    padding: 10px;
+
+    .title {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .palette {
+        list-style: none;
+        padding: 10px 0 0 10px;
+        margin: 0;
+
+        hr {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border: 0;
+            border-top: 1px solid transparent;
+        }
+    }
+
+    .data-objects-panel-form {
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+        border-radius: 5px;
+        background-color: white;
+
+        h4 {
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+        label {
+            text-transform: uppercase;
+            font-size: 10px;
+            font-family: Roboto-Medium;
+        }
+
+        hr {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+
+        ul.list-inline {
+            & > li {
+                padding: 7px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: aliceblue;
+                margin-right: 10px;
+            }
+            .instance-name {
+                text-transform: uppercase;
+                font-family: Roboto-Medium;
+            }
+            .instance-dim {
+                text-transform: uppercase;
+                font-size: 10px;
+            }
+        }
+
+        .margin-10 {
+            margin-top: 10px;
+        }
+
+        .radio {
+            margin: 0;
+        }
+    }
+
+    .data-objects-scroll-view {
+        max-height: 400px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+        border-radius: 5px;
+        overflow-y: auto;
+        background: white;
+    }
+}
+
+.tree-node-color-do {
+    background: #f1f1f1 !important;
+}
+
+.tree-node-color-field {
+    background: #fcfcfc !important;
+}
+
+.scroll-modal {
+    height: 30em;
+    overflow-y: auto;
+}
+

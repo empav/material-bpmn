@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="developer">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title ng-bind="pageTitle"></title>
+
+    <base href="/"/>
+
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="@@context/images/favicon.png">
+
+    <link rel="stylesheet" href="@@context/css/diagram-js.css">
+    <link rel="stylesheet" href="@@context/css/debug-overlay.css">
+    <link rel="stylesheet" href="@@context/css/bpmn-embedded.css">
+    <link rel="stylesheet" href="@@context/css/cmmn-embedded.css">
+    <link rel="stylesheet" href="@@context/css/bootstrap.min.css">
+    <link rel="stylesheet" href="@@context/css/angular-ui-tree.css">
+    <link rel="stylesheet" href="@@context/css/LE-style.css">
+    <link rel="stylesheet" href="@@context/LE-template/style.css">
+    <link rel="stylesheet" href="@@context/chartist/chartist.min.css">
+    <link rel="stylesheet" href="@@context/css/workbench.css">
+</head>
+<body ng-cloak>
+
+<!--Main view-->
+<div ui-view name="content"></div>
+
+<!--Layout Designer-->
+<div id="layoutEditorContainer"></div>
+
+</body>
+<script src="@@context/workbench.@@minification"></script>
+<script src="@@context/chartist/chartist.js"></script>
+</html>
+

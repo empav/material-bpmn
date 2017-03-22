@@ -1,0 +1,32 @@
+<!-- #BEGIN diagram/directive/diagram.html -->
+<dgr-controls diagram-manager="vm.diagramManager">
+</dgr-controls>
+
+<dgr-sheets diagram-manager="vm.diagramManager"
+            ng-if="vm.workbench.sheets">
+</dgr-sheets>
+
+<div id="canvas" class="canvas"
+     dgr-canvas
+     diagram-manager="vm.diagramManager">
+</div>
+
+<div id="js-properties-panel" ng-show="vm.workbench.currentPropertyDisplay === 0"></div>
+
+<show-rules rules="vm.workbench.rules"
+            usedRules="vm.workbench.getUsedRules()"
+            ng-if="vm.workbench.rules"
+            ng-show="vm.workbench.currentPropertyDisplay === 2">
+</show-rules>
+
+<manage-do do="vm.workbench.currentResource.resourceDoList"
+           base-types="vm.workbench.baseTypes"
+           portfolios="vm.workbench.activePortfolios"
+           ng-if="vm.workbench.currentResource.resourceDoList"
+           ng-show="vm.workbench.currentPropertyDisplay === 1">
+</manage-do>
+
+<source xml="vm.workbench.currentResource.resourceData"
+        ng-if="vm.workbench.currentResource.resourceData"
+        ng-show="vm.workbench.currentPropertyDisplay === 3">
+</source>

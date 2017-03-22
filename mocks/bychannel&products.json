@@ -1,0 +1,1504 @@
+{
+    "list": [
+        {
+            "id": 40,
+            "code": "FRM_58b55da302dec36b5b7f5bef",
+            "name": "F_RAMO",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass F_RAMO { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tsystemFields.put(\"IO_RAMO\",internalFields.get(\"RAMO\").get.asInstanceOf[Array[Any]])\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "IO_RAMO",
+                    "type": "TABLE",
+                    "input": true,
+                    "output": true
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 30,
+            "productCode": "PRD_58b5604d02dec36b5b7f5bf4",
+            "ruleApplyId": 245,
+            "channelElementId": 2,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "RAMO",
+                    "type": "TABLE",
+                    "input": null,
+                    "output": null,
+                    "value": [
+                        [
+                            {
+                                "name": "166",
+                                "type": "NUMBER",
+                                "input": null,
+                                "output": null,
+                                "value": 71.0,
+                                "valueAsObject": 71.0
+                            },
+                            {
+                                "name": "167",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'TR1'",
+                                "valueAsObject": "'TR1'"
+                            },
+                            {
+                                "name": "168",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'Trasizionali Ramo I'",
+                                "valueAsObject": "'Trasizionali Ramo I'"
+                            }
+                        ]
+                    ],
+                    "valueAsObject": [
+                        [
+                            {
+                                "name": "166",
+                                "type": "NUMBER",
+                                "input": null,
+                                "output": null,
+                                "value": 71.0,
+                                "valueAsObject": 71.0
+                            },
+                            {
+                                "name": "167",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'TR1'",
+                                "valueAsObject": "'TR1'"
+                            },
+                            {
+                                "name": "168",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'Trasizionali Ramo I'",
+                                "valueAsObject": "'Trasizionali Ramo I'"
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueTable\",\"name\":\"RAMO\",\"type\":\"TABLE\",\"input\":null,\"output\":null,\"value\":[[{\"@class\":\"FieldValueNumber\",\"name\":\"166\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":71.0},{\"@class\":\"FieldValueString\",\"name\":\"167\",\"type\":\"STRING\",\"input\":null,\"output\":null,\"value\":\"'TR1'\"},{\"@class\":\"FieldValueString\",\"name\":\"168\",\"type\":\"STRING\",\"input\":null,\"output\":null,\"value\":\"'Trasizionali Ramo I'\"}]]}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 30,
+            "code": "FRM_589aefd302dec3050d7792ae",
+            "name": "TEST_CAR0001",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass TEST_CAR0001 { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tvar DT_TEST_CAR = 0d\n\t\tDT_TEST_CAR = 0d\n\t\tDT_TEST_CAR = dateLibrary.betweenInMonths(systemFields.get(\"DT_STIPULA\").get.asInstanceOf[LocalDate])\n\t\tif(DT_TEST_CAR < internalFields.get(\"M_CARENZA\").get.asInstanceOf[Double]){ systemFields.put(\"CARENZA\",true) }\n\t\telse{ systemFields.put(\"CARENZA\",false) }\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "CARENZA",
+                    "type": "BOOLEAN",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "DT_STIPULA",
+                    "type": "DATE",
+                    "input": true,
+                    "output": false
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 27,
+            "productCode": "PRD_58aad7cb02dec3050d425928",
+            "ruleApplyId": 224,
+            "channelElementId": 2,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "M_CARENZA",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 6.0,
+                    "valueAsObject": 6.0
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueNumber\",\"name\":\"M_CARENZA\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":6.0}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 40,
+            "code": "FRM_58b55da302dec36b5b7f5bef",
+            "name": "F_RAMO",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass F_RAMO { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tsystemFields.put(\"IO_RAMO\",internalFields.get(\"RAMO\").get.asInstanceOf[Array[Any]])\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "IO_RAMO",
+                    "type": "TABLE",
+                    "input": true,
+                    "output": true
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 30,
+            "productCode": "PRD_58b5604d02dec36b5b7f5bf4",
+            "ruleApplyId": 245,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "RAMO",
+                    "type": "TABLE",
+                    "input": null,
+                    "output": null,
+                    "value": [
+                        [
+                            {
+                                "name": "167",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'TR1'",
+                                "valueAsObject": "'TR1'"
+                            },
+                            {
+                                "name": "168",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'Trasizionali Ramo I'",
+                                "valueAsObject": "'Trasizionali Ramo I'"
+                            },
+                            {
+                                "name": "166",
+                                "type": "NUMBER",
+                                "input": null,
+                                "output": null,
+                                "value": 71.0,
+                                "valueAsObject": 71.0
+                            }
+                        ]
+                    ],
+                    "valueAsObject": [
+                        [
+                            {
+                                "name": "167",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'TR1'",
+                                "valueAsObject": "'TR1'"
+                            },
+                            {
+                                "name": "168",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'Trasizionali Ramo I'",
+                                "valueAsObject": "'Trasizionali Ramo I'"
+                            },
+                            {
+                                "name": "166",
+                                "type": "NUMBER",
+                                "input": null,
+                                "output": null,
+                                "value": 71.0,
+                                "valueAsObject": 71.0
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueTable\",\"name\":\"RAMO\",\"type\":\"TABLE\",\"input\":null,\"output\":null,\"value\":[[{\"@class\":\"FieldValueString\",\"name\":\"167\",\"type\":\"STRING\",\"input\":null,\"output\":null,\"value\":\"'TR1'\"},{\"@class\":\"FieldValueString\",\"name\":\"168\",\"type\":\"STRING\",\"input\":null,\"output\":null,\"value\":\"'Trasizionali Ramo I'\"},{\"@class\":\"FieldValueNumber\",\"name\":\"166\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":71.0}]]}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 30,
+            "code": "FRM_589aefd302dec3050d7792ae",
+            "name": "TEST_CAR0001",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass TEST_CAR0001 { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tvar DT_TEST_CAR = 0d\n\t\tDT_TEST_CAR = 0d\n\t\tDT_TEST_CAR = dateLibrary.betweenInMonths(systemFields.get(\"DT_STIPULA\").get.asInstanceOf[LocalDate])\n\t\tif(DT_TEST_CAR < internalFields.get(\"M_CARENZA\").get.asInstanceOf[Double]){ systemFields.put(\"CARENZA\",true) }\n\t\telse{ systemFields.put(\"CARENZA\",false) }\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "CARENZA",
+                    "type": "BOOLEAN",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "DT_STIPULA",
+                    "type": "DATE",
+                    "input": true,
+                    "output": false
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 27,
+            "productCode": "PRD_58aad7cb02dec3050d425928",
+            "ruleApplyId": 224,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "M_CARENZA",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 6.0,
+                    "valueAsObject": 6.0
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueNumber\",\"name\":\"M_CARENZA\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":6.0}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 8,
+            "code": "FRM_582b3b163214a761041e352e",
+            "name": "test no regression formula",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass Test no regression formula { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tsystemFields.put(\"PTARI\",0d)\n\t\tsystemFields.put(\"PTARI_M\",0d)\n\t\tif(systemFields.get(\"AADEC\").get.asInstanceOf[Double] <= internalFields.get(\"AARIF\").get.asInstanceOf[Double]){ systemFields.put(\"PTARI\",( systemFields.get(\"PPURO\").get.asInstanceOf[Double]+1000d ))\n\t\tsystemFields.put(\"PTARI_M\",( systemFields.get(\"PTARI\").get.asInstanceOf[Double]/12d )) }\n\t\telse{ systemFields.put(\"PTARI\",( systemFields.get(\"PPURO\").get.asInstanceOf[Double]+2000d ))\n\t\tsystemFields.put(\"PTARI_M\",( systemFields.get(\"PTARI\").get.asInstanceOf[Double]/12d )) }\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "PTARI_M",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "PTAR",
+                    "type": "TABLE",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "AADEC",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "PTARI",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 6,
+            "productCode": "PRD_582b3dfb3214a76381703019",
+            "ruleApplyId": 84,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "AARIF",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 2016.0,
+                    "valueAsObject": 2016.0
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueNumber\",\"name\":\"AARIF\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":2016.0}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 2,
+            "code": "FRM_58230c5e02dec3626662a366",
+            "name": "PP001_C",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass PP001_C { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tsystemFields.put(\"PTARI\",0d)\n\t\tsystemFields.put(\"PTARI_M\",0d)\n\t\tif(systemFields.get(\"AADEC\").get.asInstanceOf[Double] <= internalFields.get(\"AARIF\").get.asInstanceOf[Double]){ systemFields.put(\"PTARI\",( systemFields.get(\"PPURO\").get.asInstanceOf[Double]+1000d ))\n\t\tsystemFields.put(\"PTARI_M\",( systemFields.get(\"PTARI\").get.asInstanceOf[Double]/12d )) }\n\t\telse{ systemFields.put(\"PTARI\",( systemFields.get(\"PPURO\").get.asInstanceOf[Double]+2000d ))\n\t\tsystemFields.put(\"PTARI_M\",( systemFields.get(\"PTARI\").get.asInstanceOf[Double]/12d )) }\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "PTARI_M",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "PTAR",
+                    "type": "TABLE",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "AADEC",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "PTARI",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 16,
+            "productCode": "PRD_5887644802dec3050d0bfb92",
+            "ruleApplyId": 158,
+            "channelElementId": 2,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "AARIF",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 2203.0,
+                    "valueAsObject": 2203.0
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueNumber\",\"name\":\"AARIF\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":2203.0}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 13,
+            "code": "FRM_588f4d2402dec3050da9fb43",
+            "name": "test4 iaba",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass Test4 iaba { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tvar V = Array(Array(0d))\n\t\tvar i = 0d\n\t\tvar dx = Array(Array(0d))\n\t\tvar Qx = Array(Array(0d))\n\t\tvar v = Array(Array(0d))\n\t\tvar lx = Array(Array(0d))\n\t\tvar qx = Array(Array(0d))\n\t\tvar A = Array(Array(0d))\n\t\tvar B = Array(Array(0d))\n\t\tvar E = 0d\n\t\tvar W = Array(Array(0d))\n\t\tW = Array(Array(2d,0d))\n\t\tE = 0d\n\t\ti = 1d\n\t\tsystemFields.put(\"PURO_RIF\",actuarialLibrary.temporaryAnnuityDeath(systemFields.get(\"ETA\").get.asInstanceOf[Double].toInt,systemFields.get(\"N\").get.asInstanceOf[Double].toInt,internalFields.get(\"T_T\").get.asInstanceOf[Double],internalFields.get(\"UNIX_02\").get.asInstanceOf[Array[Array[Double]]])*systemFields.get(\"CAP\").get.asInstanceOf[Double])\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "PURO_RIF",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "V_PURO",
+                    "type": "MATRIX",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "P_TAR",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "N",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "TT",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "AADEC",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "CAP",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "ETA",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 20,
+            "productCode": "PRD_58906cde02dec3050da9fb65",
+            "ruleApplyId": 175,
+            "channelElementId": 2,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "UNIX_02",
+                    "type": "MATRIX",
+                    "input": null,
+                    "output": null,
+                    "value": [],
+                    "valueAsObject": []
+                },
+                {
+                    "name": "T_T",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 0.02,
+                    "valueAsObject": 0.02
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueMatrix\",\"name\":\"UNIX_02\",\"type\":\"MATRIX\",\"input\":null,\"output\":null,\"value\":[]},{\"@class\":\"FieldValueNumber\",\"name\":\"T_T\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":0.02}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 41,
+            "code": "FRM_58be865c02dec306da3bba6e",
+            "name": "FO_DESCR_PRD",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass FO_DESCR_PRD { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tsystemFields.put(\"SUPPORTO_IO\",systemFields.get(\"SUPPORTO_IO\").get.asInstanceOf[Boolean])\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "SUPPORTO_IO",
+                    "type": "BOOLEAN",
+                    "input": true,
+                    "output": true
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 31,
+            "productCode": "PRD_58b94ead02dec306da3bba64",
+            "ruleApplyId": 250,
+            "channelElementId": 2,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "DESCRITTIVO_COMMERCIALE",
+                    "type": "TABLE",
+                    "input": null,
+                    "output": null,
+                    "value": [
+                        [
+                            {
+                                "name": "181",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'DESCIRIZIONE COMMERCIALE DI AP'",
+                                "valueAsObject": "'DESCIRIZIONE COMMERCIALE DI AP'"
+                            },
+                            {
+                                "name": "180",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'AP NOME COMMERCIALE'",
+                                "valueAsObject": "'AP NOME COMMERCIALE'"
+                            }
+                        ]
+                    ],
+                    "valueAsObject": [
+                        [
+                            {
+                                "name": "181",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'DESCIRIZIONE COMMERCIALE DI AP'",
+                                "valueAsObject": "'DESCIRIZIONE COMMERCIALE DI AP'"
+                            },
+                            {
+                                "name": "180",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'AP NOME COMMERCIALE'",
+                                "valueAsObject": "'AP NOME COMMERCIALE'"
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueTable\",\"name\":\"DESCRITTIVO_COMMERCIALE\",\"type\":\"TABLE\",\"input\":null,\"output\":null,\"value\":[[{\"@class\":\"FieldValueString\",\"name\":\"181\",\"type\":\"STRING\",\"input\":null,\"output\":null,\"value\":\"'DESCIRIZIONE COMMERCIALE DI AP'\"},{\"@class\":\"FieldValueString\",\"name\":\"180\",\"type\":\"STRING\",\"input\":null,\"output\":null,\"value\":\"'AP NOME COMMERCIALE'\"}]]}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 13,
+            "code": "FRM_588f4d2402dec3050da9fb43",
+            "name": "test4 iaba",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass Test4 iaba { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tvar V = Array(Array(0d))\n\t\tvar i = 0d\n\t\tvar dx = Array(Array(0d))\n\t\tvar Qx = Array(Array(0d))\n\t\tvar v = Array(Array(0d))\n\t\tvar lx = Array(Array(0d))\n\t\tvar qx = Array(Array(0d))\n\t\tvar A = Array(Array(0d))\n\t\tvar B = Array(Array(0d))\n\t\tvar E = 0d\n\t\tvar W = Array(Array(0d))\n\t\tW = Array(Array(2d,0d))\n\t\tE = 0d\n\t\ti = 1d\n\t\tsystemFields.put(\"PURO_RIF\",actuarialLibrary.temporaryAnnuityDeath(systemFields.get(\"ETA\").get.asInstanceOf[Double].toInt,systemFields.get(\"N\").get.asInstanceOf[Double].toInt,internalFields.get(\"T_T\").get.asInstanceOf[Double],internalFields.get(\"UNIX_02\").get.asInstanceOf[Array[Array[Double]]])*systemFields.get(\"CAP\").get.asInstanceOf[Double])\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "V_PURO",
+                    "type": "MATRIX",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "PURO_RIF",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "P_TAR",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "TT",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "N",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "AADEC",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "CAP",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "ETA",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 20,
+            "productCode": "PRD_58906cde02dec3050da9fb65",
+            "ruleApplyId": 175,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "UNIX_02",
+                    "type": "MATRIX",
+                    "input": null,
+                    "output": null,
+                    "value": [],
+                    "valueAsObject": []
+                },
+                {
+                    "name": "T_T",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 0.02,
+                    "valueAsObject": 0.02
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueMatrix\",\"name\":\"UNIX_02\",\"type\":\"MATRIX\",\"input\":null,\"output\":null,\"value\":[]},{\"@class\":\"FieldValueNumber\",\"name\":\"T_T\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":0.02}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 48,
+            "code": "FRM_58c1851202dec306da3bbac2",
+            "name": "TCM_A00011",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass TCM_A00011 { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tvar AL = 0d\n\t\tvar BE = 0d\n\t\tvar GA = 0d\n\t\tvar HA = 0d\n\t\tvar eta = 0d\n\t\tAL = 0d\n\t\tBE = 0d\n\t\tGA = 0d\n\t\tHA = 0d\n\t\teta = 0d\n\t\teta = dateLibrary.betweenInYears(systemFields.get(\"DT_NASCITA\").get.asInstanceOf[LocalDate])\n\t\tAL = 0.09d\n\t\tBE = 0d\n\t\tGA = 0.008d\n\t\tHA = AL+BE+GA\n\t\tsystemFields.put(\"PURO_RIF\",actuarialLibrary.temporaryAnnuityDeath(eta.toInt,systemFields.get(\"N\").get.asInstanceOf[Double].toInt,internalFields.get(\"T_T\").get.asInstanceOf[Double],internalFields.get(\"UNIX_02\").get.asInstanceOf[Array[Array[Double]]]))\n\t\tsystemFields.put(\"P_TAR\",systemFields.get(\"PURO_RIF\").get.asInstanceOf[Double]/( 1d-HA ))\n\t\tsystemFields.put(\"P_TAR\",mathematicalLibrary.round(systemFields.get(\"PURO_RIF\").get.asInstanceOf[Double],4d.toInt))\n\t\tsystemFields.put(\"P_TAR\",systemFields.get(\"P_TAR\").get.asInstanceOf[Double]*systemFields.get(\"CAP\").get.asInstanceOf[Double])\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "DT_NASCITA",
+                    "type": "DATE",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "PURO_RIF",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "P_TAR",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "N",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "DT_DECOR",
+                    "type": "DATE",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "ETA",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "CAP",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 35,
+            "productCode": "PRD_58c270b102dec306da3bbace",
+            "ruleApplyId": 272,
+            "channelElementId": 2,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "UNIX_02",
+                    "type": "MATRIX",
+                    "input": null,
+                    "output": null,
+                    "value": [],
+                    "valueAsObject": []
+                },
+                {
+                    "name": "T_T",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 0.02,
+                    "valueAsObject": 0.02
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueMatrix\",\"name\":\"UNIX_02\",\"type\":\"MATRIX\",\"input\":null,\"output\":null,\"value\":[]},{\"@class\":\"FieldValueNumber\",\"name\":\"T_T\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":0.02}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 8,
+            "code": "FRM_582b3b163214a761041e352e",
+            "name": "test no regression formula",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass Test no regression formula { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tsystemFields.put(\"PTARI\",0d)\n\t\tsystemFields.put(\"PTARI_M\",0d)\n\t\tif(systemFields.get(\"AADEC\").get.asInstanceOf[Double] <= internalFields.get(\"AARIF\").get.asInstanceOf[Double]){ systemFields.put(\"PTARI\",( systemFields.get(\"PPURO\").get.asInstanceOf[Double]+1000d ))\n\t\tsystemFields.put(\"PTARI_M\",( systemFields.get(\"PTARI\").get.asInstanceOf[Double]/12d )) }\n\t\telse{ systemFields.put(\"PTARI\",( systemFields.get(\"PPURO\").get.asInstanceOf[Double]+2000d ))\n\t\tsystemFields.put(\"PTARI_M\",( systemFields.get(\"PTARI\").get.asInstanceOf[Double]/12d )) }\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "PTAR",
+                    "type": "TABLE",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "PTARI_M",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "AADEC",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "PTARI",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 6,
+            "productCode": "PRD_582b3dfb3214a76381703019",
+            "ruleApplyId": 84,
+            "channelElementId": 2,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "AARIF",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 2016.0,
+                    "valueAsObject": 2016.0
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueNumber\",\"name\":\"AARIF\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":2016.0}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 48,
+            "code": "FRM_58c1851202dec306da3bbac2",
+            "name": "TCM_A00011",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass TCM_A00011 { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tvar AL = 0d\n\t\tvar BE = 0d\n\t\tvar GA = 0d\n\t\tvar HA = 0d\n\t\tvar eta = 0d\n\t\tAL = 0d\n\t\tBE = 0d\n\t\tGA = 0d\n\t\tHA = 0d\n\t\teta = 0d\n\t\teta = dateLibrary.betweenInYears(systemFields.get(\"DT_NASCITA\").get.asInstanceOf[LocalDate])\n\t\tAL = 0.09d\n\t\tBE = 0d\n\t\tGA = 0.008d\n\t\tHA = AL+BE+GA\n\t\tsystemFields.put(\"PURO_RIF\",actuarialLibrary.temporaryAnnuityDeath(eta.toInt,systemFields.get(\"N\").get.asInstanceOf[Double].toInt,internalFields.get(\"T_T\").get.asInstanceOf[Double],internalFields.get(\"UNIX_02\").get.asInstanceOf[Array[Array[Double]]]))\n\t\tsystemFields.put(\"P_TAR\",systemFields.get(\"PURO_RIF\").get.asInstanceOf[Double]/( 1d-HA ))\n\t\tsystemFields.put(\"P_TAR\",mathematicalLibrary.round(systemFields.get(\"PURO_RIF\").get.asInstanceOf[Double],4d.toInt))\n\t\tsystemFields.put(\"P_TAR\",systemFields.get(\"P_TAR\").get.asInstanceOf[Double]*systemFields.get(\"CAP\").get.asInstanceOf[Double])\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "DT_NASCITA",
+                    "type": "DATE",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "PURO_RIF",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "P_TAR",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "N",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "DT_DECOR",
+                    "type": "DATE",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "ETA",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "CAP",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 35,
+            "productCode": "PRD_58c270b102dec306da3bbace",
+            "ruleApplyId": 272,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "UNIX_02",
+                    "type": "MATRIX",
+                    "input": null,
+                    "output": null,
+                    "value": [],
+                    "valueAsObject": []
+                },
+                {
+                    "name": "T_T",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 0.02,
+                    "valueAsObject": 0.02
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueMatrix\",\"name\":\"UNIX_02\",\"type\":\"MATRIX\",\"input\":null,\"output\":null,\"value\":[]},{\"@class\":\"FieldValueNumber\",\"name\":\"T_T\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":0.02}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 12,
+            "code": "FRM_58875be802dec3050d0bfb8d",
+            "name": "F001",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass F001 { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tif(systemFields.get(\"ETA\").get.asInstanceOf[Double] == 60d){ matrixLibrary.assignEntry(systemFields.get(\"V_PURO\").get.asInstanceOf[Array[Array[Double]]],(1d-1).toInt,(1d-1).toInt,10d) }\n\t\telse if(systemFields.get(\"ETA\").get.asInstanceOf[Double] < 35d){ matrixLibrary.assignEntry(systemFields.get(\"V_PURO\").get.asInstanceOf[Array[Array[Double]]],(1d-1).toInt,(1d-1).toInt,30d) }\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "PURO_V",
+                    "type": "TABLE",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "V_PURO",
+                    "type": "MATRIX",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "TT",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "N",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "CAPITALE",
+                    "type": "TABLE",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "Vettori",
+                    "type": "MATRIX",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "PURO",
+                    "type": "TABLE",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "ETA",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 16,
+            "productCode": "PRD_5887644802dec3050d0bfb92",
+            "ruleApplyId": 159,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "lx",
+                    "type": "MATRIX",
+                    "input": null,
+                    "output": null,
+                    "value": [],
+                    "valueAsObject": []
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueMatrix\",\"name\":\"lx\",\"type\":\"MATRIX\",\"input\":null,\"output\":null,\"value\":[]}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 43,
+            "code": "FRM_58c0187a02dec306da3bba9c",
+            "name": "ETA_MIN_MAX_V0001",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass ETA_MIN_MAX_V0001 { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tif(systemFields.get(\"ETA\").get.asInstanceOf[Double] < internalFields.get(\"ETA_MIN\").get.asInstanceOf[Double] || systemFields.get(\"ETA\").get.asInstanceOf[Double] > internalFields.get(\"ETA_MAX\").get.asInstanceOf[Double]){ systemFields.put(\"ASSICURABILITA\",false)\n\t\tsystemFields.put(\"SMS_ERR\",\"Intervallo di età minimo/massimo non rispettato\") }\n\t\telse{ systemFields.put(\"ASSICURABILITA\",true) }\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "ASSICURABILITA",
+                    "type": "BOOLEAN",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "SMS_ERR",
+                    "type": "STRING",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "ETA",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 35,
+            "productCode": "PRD_58c270b102dec306da3bbace",
+            "ruleApplyId": 275,
+            "channelElementId": 2,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "ETA_MIN",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 18.0,
+                    "valueAsObject": 18.0
+                },
+                {
+                    "name": "ETA_MAX",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 79.0,
+                    "valueAsObject": 79.0
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueNumber\",\"name\":\"ETA_MIN\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":18.0},{\"@class\":\"FieldValueNumber\",\"name\":\"ETA_MAX\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":79.0}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 41,
+            "code": "FRM_58be865c02dec306da3bba6e",
+            "name": "FO_DESCR_PRD",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass FO_DESCR_PRD { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tsystemFields.put(\"SUPPORTO_IO\",systemFields.get(\"SUPPORTO_IO\").get.asInstanceOf[Boolean])\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "SUPPORTO_IO",
+                    "type": "BOOLEAN",
+                    "input": true,
+                    "output": true
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 32,
+            "productCode": "PRD_58bd93ca02dec306da3bba69",
+            "ruleApplyId": 252,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "DESCRITTIVO_COMMERCIALE",
+                    "type": "TABLE",
+                    "input": null,
+                    "output": null,
+                    "value": [
+                        [
+                            {
+                                "name": "185",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'sw_prd_01_ramo nome commerciale'",
+                                "valueAsObject": "'sw_prd_01_ramo nome commerciale'"
+                            },
+                            {
+                                "name": "186",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'descrizione commerciale del prodotto'",
+                                "valueAsObject": "'descrizione commerciale del prodotto'"
+                            }
+                        ]
+                    ],
+                    "valueAsObject": [
+                        [
+                            {
+                                "name": "185",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'sw_prd_01_ramo nome commerciale'",
+                                "valueAsObject": "'sw_prd_01_ramo nome commerciale'"
+                            },
+                            {
+                                "name": "186",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'descrizione commerciale del prodotto'",
+                                "valueAsObject": "'descrizione commerciale del prodotto'"
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueTable\",\"name\":\"DESCRITTIVO_COMMERCIALE\",\"type\":\"TABLE\",\"input\":null,\"output\":null,\"value\":[[{\"@class\":\"FieldValueString\",\"name\":\"185\",\"type\":\"STRING\",\"input\":null,\"output\":null,\"value\":\"'sw_prd_01_ramo nome commerciale'\"},{\"@class\":\"FieldValueString\",\"name\":\"186\",\"type\":\"STRING\",\"input\":null,\"output\":null,\"value\":\"'descrizione commerciale del prodotto'\"}]]}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 12,
+            "code": "FRM_58875be802dec3050d0bfb8d",
+            "name": "F001",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass F001 { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tif(systemFields.get(\"ETA\").get.asInstanceOf[Double] == 60d){ matrixLibrary.assignEntry(systemFields.get(\"V_PURO\").get.asInstanceOf[Array[Array[Double]]],(1d-1).toInt,(1d-1).toInt,10d) }\n\t\telse if(systemFields.get(\"ETA\").get.asInstanceOf[Double] < 35d){ matrixLibrary.assignEntry(systemFields.get(\"V_PURO\").get.asInstanceOf[Array[Array[Double]]],(1d-1).toInt,(1d-1).toInt,30d) }\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "PURO_V",
+                    "type": "TABLE",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "V_PURO",
+                    "type": "MATRIX",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "N",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "TT",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "CAPITALE",
+                    "type": "TABLE",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "Vettori",
+                    "type": "MATRIX",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "PURO",
+                    "type": "TABLE",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "ETA",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 17,
+            "productCode": "PRD_5887663702dec3050d0bfb97",
+            "ruleApplyId": 161,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "lx",
+                    "type": "MATRIX",
+                    "input": null,
+                    "output": null,
+                    "value": [],
+                    "valueAsObject": []
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueMatrix\",\"name\":\"lx\",\"type\":\"MATRIX\",\"input\":null,\"output\":null,\"value\":[]}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 19,
+            "code": "FRM_58931eee02dec3050d4040c2",
+            "name": "CARENZA01",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass CARENZA01 { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tvar AL = 0d\n\t\tvar BE = 0d\n\t\tvar GA = 0d\n\t\tvar HA = 0d\n\t\tvar DT_TEST_CAR = 0d\n\t\tAL = 0d\n\t\tBE = 0d\n\t\tGA = 0d\n\t\tHA = 0d\n\t\tDT_TEST_CAR = 0d\n\t\tDT_TEST_CAR = dateLibrary.betweenInMonths(systemFields.get(\"DT_STIPULA\").get.asInstanceOf[LocalDate])\n\t\tif(DT_TEST_CAR < 6d){ systemFields.put(\"TEST_CARENZA\",\" KO\") }\n\t\telse{ systemFields.put(\"TEST_CARENZA\",\"OK\") }\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "Answer_3",
+                    "type": "TABLE",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "Durata",
+                    "type": "STRING",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "DT_STIPULA",
+                    "type": "DATE",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "V_PURO",
+                    "type": "MATRIX",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "Assicurabilita",
+                    "type": "STRING",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "P_TAR",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "TT",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "N",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": true
+                },
+                {
+                    "name": "TAB_Nx3",
+                    "type": "MATRIX",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "ETA",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "CAP",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "ETA_VIS_MED",
+                    "type": "STRING",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "DT_CARENZA",
+                    "type": "DATE",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "PURO_RIF",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "Durata_min/max",
+                    "type": "STRING",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "TEST_CAN_VEND",
+                    "type": "BOOLEAN",
+                    "input": false,
+                    "output": false
+                },
+                {
+                    "name": "TEST_CARENZA",
+                    "type": "STRING",
+                    "input": false,
+                    "output": true
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 24,
+            "productCode": "PRD_58935ff202dec3050d4040d0",
+            "ruleApplyId": 198,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "CAN_VEN",
+                    "type": "TABLE",
+                    "input": null,
+                    "output": null,
+                    "value": [],
+                    "valueAsObject": []
+                },
+                {
+                    "name": "UNIX_02",
+                    "type": "MATRIX",
+                    "input": null,
+                    "output": null,
+                    "value": [],
+                    "valueAsObject": []
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueTable\",\"name\":\"CAN_VEN\",\"type\":\"TABLE\",\"input\":null,\"output\":null,\"value\":[]},{\"@class\":\"FieldValueMatrix\",\"name\":\"UNIX_02\",\"type\":\"MATRIX\",\"input\":null,\"output\":null,\"value\":[]}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 45,
+            "code": "FRM_58bfc99e02dec306da3bba88",
+            "name": "DURATA_MIN_MAX_V001",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass DURATA_MIN_MAX_V001 { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tvar A = Array(Array(0d))\n\t\tvar B = 0d\n\t\tA = Array(Array(0d,0d))\n\t\tB = 0d\n\t\tif(systemFields.get(\"N\").get.asInstanceOf[Double] < internalFields.get(\"DURATA_MIN\").get.asInstanceOf[Double] || systemFields.get(\"N\").get.asInstanceOf[Double] > internalFields.get(\"DURATA_MAX\").get.asInstanceOf[Double]){ systemFields.put(\"ASSICURABILITA\",false)\n\t\tsystemFields.put(\"SMS_ERR\",\"Intervallo durata contratto minimo/massimo non rispettato\") }\n\t\telse{ systemFields.put(\"ASSICURABILITA\",true) }\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "DT_SCAD",
+                    "type": "DATE",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "ASSICURABILITA",
+                    "type": "BOOLEAN",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "N",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "DT_DECOR",
+                    "type": "DATE",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "SMS_ERR",
+                    "type": "STRING",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "ETA",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 35,
+            "productCode": "PRD_58c270b102dec306da3bbace",
+            "ruleApplyId": 273,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "DURATA_MIN",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 1.0,
+                    "valueAsObject": 1.0
+                },
+                {
+                    "name": "DURATA_MAX",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 30.0,
+                    "valueAsObject": 30.0
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueNumber\",\"name\":\"DURATA_MIN\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":1.0},{\"@class\":\"FieldValueNumber\",\"name\":\"DURATA_MAX\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":30.0}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 48,
+            "code": "FRM_58c1851202dec306da3bbac2",
+            "name": "TCM_A00011",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass TCM_A00011 { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tvar AL = 0d\n\t\tvar BE = 0d\n\t\tvar GA = 0d\n\t\tvar HA = 0d\n\t\tvar eta = 0d\n\t\tAL = 0d\n\t\tBE = 0d\n\t\tGA = 0d\n\t\tHA = 0d\n\t\teta = 0d\n\t\teta = dateLibrary.betweenInYears(systemFields.get(\"DT_NASCITA\").get.asInstanceOf[LocalDate])\n\t\tAL = 0.09d\n\t\tBE = 0d\n\t\tGA = 0.008d\n\t\tHA = AL+BE+GA\n\t\tsystemFields.put(\"PURO_RIF\",actuarialLibrary.temporaryAnnuityDeath(eta.toInt,systemFields.get(\"N\").get.asInstanceOf[Double].toInt,internalFields.get(\"T_T\").get.asInstanceOf[Double],internalFields.get(\"UNIX_02\").get.asInstanceOf[Array[Array[Double]]]))\n\t\tsystemFields.put(\"P_TAR\",systemFields.get(\"PURO_RIF\").get.asInstanceOf[Double]/( 1d-HA ))\n\t\tsystemFields.put(\"P_TAR\",mathematicalLibrary.round(systemFields.get(\"PURO_RIF\").get.asInstanceOf[Double],4d.toInt))\n\t\tsystemFields.put(\"P_TAR\",systemFields.get(\"P_TAR\").get.asInstanceOf[Double]*systemFields.get(\"CAP\").get.asInstanceOf[Double])\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "DT_NASCITA",
+                    "type": "DATE",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "PURO_RIF",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "P_TAR",
+                    "type": "NUMBER",
+                    "input": false,
+                    "output": true
+                },
+                {
+                    "name": "N",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "DT_DECOR",
+                    "type": "DATE",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "CAP",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                },
+                {
+                    "name": "ETA",
+                    "type": "NUMBER",
+                    "input": true,
+                    "output": false
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 34,
+            "productCode": "PRD_58c187c102dec306da3bbac9",
+            "ruleApplyId": 267,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "UNIX_02",
+                    "type": "MATRIX",
+                    "input": null,
+                    "output": null,
+                    "value": [],
+                    "valueAsObject": []
+                },
+                {
+                    "name": "T_T",
+                    "type": "NUMBER",
+                    "input": null,
+                    "output": null,
+                    "value": 0.02,
+                    "valueAsObject": 0.02
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueMatrix\",\"name\":\"UNIX_02\",\"type\":\"MATRIX\",\"input\":null,\"output\":null,\"value\":[]},{\"@class\":\"FieldValueNumber\",\"name\":\"T_T\",\"type\":\"NUMBER\",\"input\":null,\"output\":null,\"value\":0.02}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        },
+        {
+            "id": 41,
+            "code": "FRM_58be865c02dec306da3bba6e",
+            "name": "FO_DESCR_PRD",
+            "description": null,
+            "formulaSource": "package it.euris.pd.compiledformula\n\nimport it.euris.alc.mathlibrary.service._\nimport scala.collection.mutable.Map\nimport java.time._\n\nclass FO_DESCR_PRD { \n\n\tprivate var mathematicalLibrary = new MathematicalLibrary\n\tprivate var matrixLibrary = new MatrixLibrary\n\tprivate var stringLibrary = new StringLibrary\n\tprivate var dateLibrary = new DateLibrary\n\tprivate var actuarialLibrary = new ActuarialLibrary\n\tprivate var tableLibrary = new TableLibrary\n\tprivate var typeConversionLibrary = new TypeConversion\n\n\tdef execute(systemFields: Map[String, Any], internalFields: Map[String, Any], ruleFields: Map[String, Map[String, Any]]) = { \n\n\t\tsystemFields.put(\"SUPPORTO_IO\",systemFields.get(\"SUPPORTO_IO\").get.asInstanceOf[Boolean])\n\n\t}\n\n}",
+            "scope": null,
+            "systemFields": [
+                {
+                    "name": "SUPPORTO_IO",
+                    "type": "BOOLEAN",
+                    "input": true,
+                    "output": true
+                }
+            ],
+            "calledFormulasCode": null,
+            "productId": 31,
+            "productCode": "PRD_58b94ead02dec306da3bba64",
+            "ruleApplyId": 250,
+            "channelElementId": 1,
+            "linkId": null,
+            "ruleName": null,
+            "formulaInternalFields": [
+                {
+                    "name": "DESCRITTIVO_COMMERCIALE",
+                    "type": "TABLE",
+                    "input": null,
+                    "output": null,
+                    "value": [
+                        [
+                            {
+                                "name": "181",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'DESCIRIZIONE COMMERCIALE DI AP'",
+                                "valueAsObject": "'DESCIRIZIONE COMMERCIALE DI AP'"
+                            },
+                            {
+                                "name": "180",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'AP NOME COMMERCIALE'",
+                                "valueAsObject": "'AP NOME COMMERCIALE'"
+                            }
+                        ]
+                    ],
+                    "valueAsObject": [
+                        [
+                            {
+                                "name": "181",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'DESCIRIZIONE COMMERCIALE DI AP'",
+                                "valueAsObject": "'DESCIRIZIONE COMMERCIALE DI AP'"
+                            },
+                            {
+                                "name": "180",
+                                "type": "STRING",
+                                "input": null,
+                                "output": null,
+                                "value": "'AP NOME COMMERCIALE'",
+                                "valueAsObject": "'AP NOME COMMERCIALE'"
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "formulaInternalFieldsAsJson": "[{\"@class\":\"FieldValueTable\",\"name\":\"DESCRITTIVO_COMMERCIALE\",\"type\":\"TABLE\",\"input\":null,\"output\":null,\"value\":[[{\"@class\":\"FieldValueString\",\"name\":\"181\",\"type\":\"STRING\",\"input\":null,\"output\":null,\"value\":\"'DESCIRIZIONE COMMERCIALE DI AP'\"},{\"@class\":\"FieldValueString\",\"name\":\"180\",\"type\":\"STRING\",\"input\":null,\"output\":null,\"value\":\"'AP NOME COMMERCIALE'\"}]]}]",
+            "ruleInternalFields": [],
+            "ruleInternalFieldsAsJson": "[]"
+        }
+    ],
+    "messages": [],
+    "operationResult": "OK",
+    "filter": {
+        "fetchProfile": null,
+        "pager": {
+            "elementsCount": 120,
+            "orderBy": null,
+            "currentPage": 1,
+            "pageMax": 6,
+            "elementsPerPage": 20,
+            "disabledNext": false,
+            "disabledPrevious": true
+        }
+    }
+}

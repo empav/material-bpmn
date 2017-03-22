@@ -1,0 +1,423 @@
+<div class="data-objects-panel">
+
+    <!-- Nested node template -->
+    <script type="text/ng-template" id="nodes_renderer.html">
+
+        <div ui-tree-handle class="tree-node tree-node-content"
+             ng-class="{'tree-node-color-do': node.fields, 'tree-node-color-field': !node.fields, 'angular-ui-tree-handle-error': vm.showWarning(node, this)}">
+
+            <!-- Warning -->
+            <i class="material-icons" ng-mouseover="vm.showTooltip($event, node, this)"
+               ng-if="vm.showWarning(node, this)">warning</i>
+
+            <!-- Green Toggle -->
+            <a class="btn btn-gray btn-collapse"
+               ng-if="node.fields.length"
+               data-nodrag
+               ng-click="vm.toggle(this)">
+                <i class="material-icons">
+                    {{collapsed ? 'chevron_right' : 'keyboard_arrow_down'}}
+                </i>
+            </a>
+
+            <!-- Checkboxing do to be imported-->
+            <input type="checkbox" class="tree-node-checkbox"
+                   ng-if="node.fields.length && !vm.isEdit"
+                   ng-change="vm.checkDo(node,0)"
+                   ng-model="node.imported">
+
+            <!-- Data object name-->
+            <span class="tree-node-do-name">{{node.fieldName}}</span>
+
+            <!-- Actions showed in edit mode if node has not been imported -->
+            <ul ng-if="vm.isEdit" class="list-inline list-unstyled pull-right">
+
+                <!-- Cardinality -->
+                <li ng-if="!node.imported">
+                    <span class="tree-node-cardinality">
+                        {{node.dimensions ? 'LIST' : 'SINGLE VALUE'}}
+                    </span>
+                </li>
+
+                <!-- Add subdataobject-->
+                <li ng-if="node.fields.length && !node.imported">
+                    <a class="btn btn-gray btn-xs" data-nodrag
+                       ng-click="vm.add(this,0)">
+                        <span class="glyphicon glyphicon-plus"> D</span>
+                    </a>
+                </li>
+
+                <!-- Add subfield-->
+                <li ng-if="node.fields.length && !node.imported">
+                    <a class="btn btn-gray btn-xs" data-nodrag
+                       ng-click="vm.add(this,1)">
+                        <span class="glyphicon glyphicon-plus"> F</span>
+                    </a>
+                </li>
+
+                <!-- Imported flag-->
+                <li ng-if="node.fields && node.imported">
+                    <span class="tree-node-imported">IMPORTED</span>
+                </li>
+
+                <!-- Add instance DO (only root nodes)-->
+                <li ng-if="node.fields.length">
+                    <a class="btn btn-success btn-xs" data-nodrag
+                       ng-click="vm.edit(this,true)"
+                       ng-if="!this.$parentNodeScope">
+                        <span class="glyphicon glyphicon-screenshot"></span>
+                    </a>
+                </li>
+
+                <!-- Edit properties -->
+                <li ng-if="!node.imported">
+                    <a class="btn btn-warning btn-xs" data-nodrag
+                       ng-click="vm.edit(this,false)">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                </li>
+
+                <!-- Remove node-->
+                <li>
+                    <a class="btn btn-danger btn-xs"
+                       data-nodrag
+                       ng-click="vm.remove(this)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- Could be nested do or base fields -->
+        <ol ui-tree-nodes="" ng-model="node.fields" ng-class="{hidden: collapsed}">
+            <li ng-repeat="node in node.fields" ui-tree-node ng-include="'nodes_renderer.html'"
+                ng-show="vm.visible(node)">
+            </li>
+        </ol>
+
+    </script>
+
+    <!--Title-->
+    <div class="row title">
+        <div class="col-md-12">
+            <h4>Data Objects</h4>
+            <p>Create new data objects clicking Add button.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--Palette-->
+        <div class="col-md-1">
+            <!-- Palette in edit mode-->
+            <ul class="palette" ng-show="vm.isEdit">
+                <li>
+                    <a ng-click="vm.expandAll('tree-do')" class="btn btn-gray btn-just-icon tooltip-right"
+                       data-tip="Expand All">
+                        <i class="material-icons">keyboard_arrow_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a ng-click="vm.collapseAll('tree-do')" class="btn btn-gray btn-just-icon tooltip-right"
+                       data-tip="Collapse All">
+                        <i class="material-icons">keyboard_arrow_up</i>
+                    </a>
+                </li>
+                <li>
+                    <a ng-click="vm.add()" class="btn btn-gray btn-just-icon tooltip-right"
+                       data-tip="Add a Data Object">
+                        <i class="material-icons">add</i>
+                    </a>
+                </li>
+                <li>
+                    <a ng-click="vm.switchToImportMode()" class="btn btn-gray btn-just-icon tooltip-right"
+                       data-tip="Import">
+                        <i class="material-icons">input</i>
+                    </a>
+                </li>
+            </ul>
+            <!--Palette in import mode-->
+            <ul class="palette" ng-show="!vm.isEdit">
+                <li>
+                    <a ng-click="vm.isEdit = true; vm.backupRestoreDO(false);"
+                       class="btn btn-gray btn-just-icon tooltip-right"
+                       data-tip="Back to edit">
+                        <i class="glyphicon glyphicon-arrow-left"></i>
+                    </a>
+                </li>
+                <li>
+                    <a ng-click="vm.expandAll('tree-do')" class="btn btn-gray btn-just-icon tooltip-right"
+                       data-tip="Expand All">
+                        <i class="glyphicon glyphicon-collapse-down"></i>
+                    </a>
+                </li>
+                <li>
+                    <a ng-click="vm.collapseAll('tree-do')" class="btn btn-gray btn-just-icon tooltip-right"
+                       data-tip="Collapse All">
+                        <i class="glyphicon glyphicon-collapse-up"></i>
+                    </a>
+                </li>
+                <hr>
+                <li ng-repeat="portfolio in vm.portfolios track by $index"
+                    ng-if="portfolio.name && portfolio.name.length">
+                    <a ng-click="vm.getDOFromPortfolio(portfolio.source)"
+                       class="btn btn-gray btn-just-icon tooltip-right"
+                       data-tip="{{portfolio.name}}">
+                        <i class="glyphicon glyphicon-import"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Tree Nodes-->
+        <div class="col-md-7 data-objects-scroll-view" ng-show="vm.do.length">
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="vm.searchDo"
+                               placeholder="Search for data objects...">
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success btn-xs">Action</button>
+                        <button type="button" class="btn btn-success btn-xs dropdown-toggle"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a ng-click="vm.importDOFromPortfolio(0)" ng-show="!vm.isEdit">Import All</a></li>
+                            <li><a ng-click="vm.importDOFromPortfolio(1)" ng-show="!vm.isEdit">Import Selected</a></li>
+                            <li><a ng-click="vm.clearDo(false)" ng-show="vm.isEdit">Clear Imported</a></li>
+                            <li><a ng-click="vm.clearDo(true)" ng-show="vm.isEdit">Clear All</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Tree DO -->
+                <div ui-tree id="tree-do" data-clone-enabled="false" data-drag-enabled="false">
+                    <ol ui-tree-nodes ng-model="vm.do">
+                        <li ng-repeat="node in vm.do" ng-show="vm.visible(node)" ui-tree-node
+                            ng-include="'nodes_renderer.html'"></li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Props panel -->
+        <div class="col-md-3" ng-show="vm.selectedField && !vm.instancesPanel">
+            <form novalidate name="structureNode" class="data-objects-panel-form">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>{{vm.selectedField.fieldName}}</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="fieldName">name</label>
+                            <input id="fieldName"
+                                   name="fieldName"
+                                   type="text"
+                                   placeholder="Field name"
+                                   class="btn-block"
+                                   ng-model="vm.selectedField.fieldName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="fieldLabel">label</label>
+                            <input id="fieldLabel"
+                                   name="fieldLabel"
+                                   type="text"
+                                   placeholder="Field label"
+                                   class="btn-block"
+                                   ng-model="vm.selectedField.fieldLabel">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-show="vm.scope.$parentNodeScope">
+                    <div class="col-md-12">
+                        <label>Dimensions</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="dimensions" ng-model="vm.selectedField.dimensions" value="0">
+                                <span class="circle"></span>
+                                <span class="check"></span>
+                                Single Value
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="dimensions" ng-model="vm.selectedField.dimensions" value="1">
+                                <span class="circle"></span>
+                                <span class="check"></span>
+                                List
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="dimensions" ng-model="vm.selectedField.dimensions" value="2">
+                                <span class="circle"></span>
+                                <span class="check"></span>
+                                Matrix 2D
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-if="!vm.selectedField.fields">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="fieldType">Type</label>
+                            <select class="form-control"
+                                    id="fieldType"
+                                    name="fieldType"
+                                    ng-model="vm.selectedField.fieldType"
+                                    ng-options="type.name group by type.elementaryType for type in vm.baseTypes">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-if="vm.selectedField.fields">
+
+                    <div class="col-md-12">
+                        <label for="fieldType">Select or create a new type</label>
+                        <div class="form-group" ng-if="vm.doTypes.length">
+                            <select class="form-control"
+                                    id="fieldTypes"
+                                    name="fieldTypes"
+                                    ng-model="vm.selectedField.fieldType"
+                                    ng-options="type.name group by type.elementaryType for type in vm.doTypes">
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7">
+                                <div class="form-group form-group-nomargin">
+                                    <input id="fieldType"
+                                       name="fieldType"
+                                       type="text"
+                                       placeholder="New Data Object type"
+                                       class="form-control"
+                                       ng-model="vm.fieldType">
+                                </div>
+                            </div>
+                            <span class="col-xs-4">
+                                    <button class="btn btn-gray btn-sm"
+                                            type="button"
+                                            ng-disabled="!vm.fieldType"
+                                            ng-click="vm.newDOType()">Create</button>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row margin-10">
+                    <div class="col-md-12">
+                        <button type="button"
+                                ng-click="vm.selectedField = null; vm.scope = null;"
+                                class="btn btn-sm btn-gray btn-block">
+                            Close
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Instances panel -->
+        <div class="col-md-2" ng-show="!vm.scope.$parentNodeScope && vm.instancesPanel">
+            <form novalidate name="structureNode" class="data-objects-panel-form">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>{{vm.selectedField.fieldName}}</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Dimensions</label>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" ng-model="vm.newInstance.dimensions" value="0"
+                                           checked>
+                                    Single Value
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" ng-model="vm.newInstance.dimensions" value="1">
+                                    List
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" ng-model="vm.newInstance.dimensions" value="2">
+                                    Matrix 2D
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <input id="instance"
+                                   name="instance"
+                                   type="text"
+                                   placeholder="New Instance"
+                                   class="form-control"
+                                   ng-model="vm.newInstance.name">
+                            <span class="input-group-btn">
+                                <button type="button"
+                                        ng-click="vm.saveInstance()"
+                                        ng-disabled="!vm.newInstance.name"
+                                        class="btn btn-gray btn-just-icon">
+                                    Create
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-show="vm.selectedField.instances.length">
+                    <div class="col-md-12 margin-10">
+                        <ul class="list-unstyled list-inline">
+                            <li ng-repeat="i in vm.selectedField.instances track by $index">
+                                <span class="instance-name">{{i.name}}</span>
+                                <span class="instance-dim">{{i.dimensions ? '(list)' : '(single)'}}</span>
+                                <a ng-click="vm.selectedField.instances.splice(vm.selectedField.instances.indexOf(i),1)"><i
+                                    class="glyphicon glyphicon-remove"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row margin-10">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button type="button"
+                                    ng-click="vm.selectedField = null; vm.scope = null; vm.instancesPanel = false;"
+                                    class="btn btn-mr btn-block">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

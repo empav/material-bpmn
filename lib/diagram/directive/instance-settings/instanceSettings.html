@@ -1,0 +1,55 @@
+<div class="rules-settings-panel" ng-if="vm.loaded && vm.struttura.workbench.currentPropertyDisplay === 0">
+    <!--Title-->
+    <div class="container-fluid">
+        <div class="row label">
+            <span ng-bind="vm.struttura.title"></span>
+            <div class="btn btn-danger pull-right" ng-click="vm.close()">x</div>
+        </div>
+        <div class="row panel-divider">
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="">
+                    <div class="col-xs-3">
+                        <div>
+                            <div  ng-repeat="field in vm.struttura.fieldsToInstance">
+                                <div class="btn btn-block" ng-if="!vm.fieldIs('O_', field) && !vm.fieldIs('I_', field)"
+                                     ng-class="{'btn-selected' :field.selected, 'btn-info' :field.value, 'btn-default' : (!field.selected && !field.value)}"
+                                     ng-click="vm.select(field)" >
+                                    <span ng-bind="field.name"></span>
+                                </div>
+                            </div>
+                            <div class="help-block"></div>
+
+                            <div ng-repeat="field in vm.struttura.fieldsToInstance">
+                                <div class="btn btn-block" ng-if="vm.fieldIs('I_', field)"
+                                     ng-class="{'btn-selected' :field.selected, 'btn-warning' :field.value, 'btn-default' : (!field.selected && !field.value)}"
+                                     ng-click="vm.select(field)"
+                                     >
+                                    <span ng-bind="field.name"></span>
+                                    <i class="pull-left material-icons md-18">&#xE893;</i>
+                                </div>
+                            </div>
+                            <div class="help-block"></div>
+
+                            <div ng-repeat="field in vm.struttura.fieldsToInstance">
+                                <div class="btn btn-block" ng-if="vm.fieldIs('O_', field)"
+                                     ng-class="{'btn-selected' :field.selected, 'btn-primary' :field.value, 'btn-default' : (!field.selected && !field.value)}"
+                                     ng-click="vm.select(field)"
+                                     >
+                                    <span ng-bind="field.name"></span>
+                                    <i class="pull-right material-icons md-18">&#xE893;</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-9">
+                        <div class="row">
+                            <instance-tree callback = "vm.save" list="vm.struttura.instances" ></instance-tree>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

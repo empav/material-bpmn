@@ -1,0 +1,416 @@
+<div class="container-fluid" style="padding-top: 35px;">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <a ui-sref="home.detail">
+                    <div class="header header-warning">
+                        <i class="material-icons">content_copy</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <p class="category">Recent projects</p>
+                    <h3 class="title">20/50
+                        <small>Created</small>
+                    </h3>
+                </div>
+                <div class="footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Last 24 Hours
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <a ui-sref="home.detail">
+                    <div class="header header-success">
+                        <i class="material-icons">content_copy</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <p class="category">Active projects</p>
+                    <h3 class="title">20/50
+                        <small>Created</small>
+                    </h3>
+                </div>
+                <div class="footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Last month
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <a ui-sref="home.detail">
+                    <div class="header header-danger">
+                        <i class="material-icons">content_copy</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <p class="category">Obsolete projects</p>
+                    <h3 class="title">20/50
+                        <small>Created</small>
+                    </h3>
+                </div>
+                <div class="footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Last year
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <a ui-sref="home.detail">
+                    <div class="header header-info">
+                        <i class="material-icons">content_copy</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <p class="category">Projects to verify</p>
+                    <h3 class="title">20/50
+                        <small>Created</small>
+                    </h3>
+                </div>
+                <div class="footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Last week
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-chart">
+                <div class="header" data-background-color="green">
+                    <div class="ct-chart" id="dailySalesChart"></div>
+                </div>
+                <div class="content">
+                    <h4 class="title">Projects in progress</h4>
+                    <p class="category"><span class="text-success"><i class="fa fa-long-arrow-up"></i> 55%  </span> of
+                        task done.</p>
+                </div>
+                <div class="footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Last 24 Hours
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-chart">
+                <div class="header" data-background-color="orange">
+                    <div class="ct-chart" id="emailsSubscriptionChart"></div>
+                </div>
+                <div class="content">
+                    <h4 class="title">Member Subscriptions</h4>
+                    <p class="category">Members who joined the team last year</p>
+                </div>
+                <div class="footer">
+                    <div class="stats">
+                        <i class="material-icons">access_time</i> campaign sent 2 days ago
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-chart">
+                <div class="header" data-background-color="red">
+                    <div class="ct-chart" id="completedTasksChart"></div>
+                </div>
+                <div class="content">
+                    <h4 class="title">Completed Tasks</h4>
+                    <p class="category">Team Performance</p>
+                </div>
+                <div class="footer">
+                    <div class="stats">
+                        <i class="material-icons">access_time</i> campaign sent 2 days ago
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card card-nav-tabs">
+                <div class="header header-primary" data-background-color="lisa">
+                    <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                            <span class="nav-tabs-title">Tasks:</span>
+                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                <li class="active">
+                                    <a href="#profile" data-toggle="tab">
+                                        <i class="material-icons">bug_report</i>
+                                        Bugs
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#messages" data-toggle="tab">
+                                        <svg width="24px" height="24px" viewBox="0 0 256 256" version="1.1" id="SVGRoot"
+                                             inkscape:version="0.92.0 r15299" sodipodi:docname="icona.svg">
+                                            <sodipodi:namedview id="base" borderopacity="1.0" inkscape:pageopacity="0.0"
+                                                                inkscape:pageshadow="2" inkscape:zoom="1.4142136"
+                                                                inkscape:cx="260.95967" inkscape:cy="39.121141"
+                                                                inkscape:document-units="px"
+                                                                inkscape:current-layer="layer1" showgrid="false"
+                                                                inkscape:window-width="1920"
+                                                                inkscape:window-height="1001" inkscape:window-x="-9"
+                                                                inkscape:window-y="-9" inkscape:window-maximized="1"
+                                                                inkscape:grid-bbox="true"></sodipodi:namedview>
+                                            <defs id="defs4485"></defs>
+                                            <metadata id="metadata4488">
+                                                <rdf:rdf>
+                                                    <cc:work rdf:about="">
+                                                        <dc:format>image/svg+xml</dc:format>
+                                                        <dc:type
+                                                            rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+                                                        <dc:title></dc:title>
+                                                    </cc:work>
+                                                </rdf:rdf>
+                                            </metadata>
+                                            <g id="layer1" inkscape:groupmode="layer" inkscape:label="Livello 1">
+                                                <path inkscape:connector-curvature="0"
+                                                      style="fill:currentColor;stroke-width:0.31400719"
+                                                      d="m 69.341897,9.9195 24.9004,24.899174 24.899783,24.898561 h 17.4728 17.47216 l 0.41703,-1.570033 c 5.42029,-20.394921 22.43512,-34.394631 42.82457,-35.235655 5.19397,-0.214238 9.06883,0.121252 13.25577,1.148088 17.40886,4.269457 30.6323,17.936454 34.65303,35.814608 0.76577,3.405056 0.81152,14.507729 0.0748,18.212414 -2.73701,13.763722 -11.64853,25.779803 -23.95224,32.296143 -2.84073,1.50453 -7.15318,3.19235 -9.97953,3.90605 l -2.43355,0.61452 v 19.11518 19.11582 h 18.52642 18.52642 v 46.47307 46.47306 h -46.47307 -46.47306 v -46.47306 -46.47307 h 18.68343 18.68343 v -19.11703 -19.11702 l -1.49154,-0.35143 c -5.35206,-1.26074 -11.64731,-4.11553 -16.18425,-7.33929 -8.68058,-6.16804 -15.04116,-15.323554 -17.94194,-25.825869 l -0.69363,-2.512057 -16.77487,-0.08157 -16.77424,-0.08095 -20.884543,20.884545 -20.88454,20.884571 -0.0816,16.76073 -0.081,16.76135 1.49399,0.35694 c 16.2521,3.87908 29.453793,16.54507 34.012733,32.63345 2.04441,7.21472 2.23893,16.1269 0.50843,23.29295 -1.21718,5.04054 -3.60869,10.58173 -6.43961,14.92087 -6.57865,10.08352 -16.676843,17.00653 -29.145623,19.98237 -3.79413,0.90552 -13.89848,1.01346 -18.1658,0.19381 -9.14374,-1.7563 -17.16465,-5.90214 -23.61863,-12.20766 -10.13765,-9.90445 -15.02991,-22.54308 -14.19287,-36.66582 1.18975,-20.07326 15.52923,-37.0759 35.53494,-42.13525 l 1.49154,-0.37719 -0.005,-16.6804 -0.006,-16.67979 -24.95254,-25.003446 C 21.419767,81.879219 10.105887,70.405773 10.001847,70.134672 9.8664172,69.781775 18.267707,61.159255 39.577417,39.780847 Z"
+                                                      id="path5066"
+                                                      sodipodi:nodetypes="ccccccscccccccccccccccccccccccccccccccccssssccccccccc"></path>
+                                            </g>
+                                        </svg>
+                                        Projects
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#settings" data-toggle="tab">
+                                        <i class="material-icons">cloud</i>
+                                        Connections
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="profile">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes" checked>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons text-danger ">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons text-danger">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>Flooded: One year later, assessing what was lost and what was found when a
+                                        ravaging rain swept through metro Detroit
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons text-danger ">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes" checked>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>Create 4 Invisible User Experiences you Never Knew About</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons text-danger ">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="messages">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes" checked>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>Flooded: One year later, assessing what was lost and what was found when a
+                                        ravaging rain swept through metro Detroit
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons text-danger ">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons text-danger ">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="settings">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons text-danger ">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes" checked>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>Flooded: One year later, assessing what was lost and what was found when a
+                                        ravaging rain swept through metro Detroit
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons text-danger ">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove"
+                                                class="btn btn-simple btn-xs">
+                                            <i class="material-icons text-danger">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+.sheets-panel {
+    position: absolute;
+    z-index: 0;
+    margin: 0;
+    bottom: 10px;
+    top: 65px;
+    left: 10px;
+    right: 10px;
+
+    .sheets-panel-tabs {
+
+        .wrapper {
+            position:relative;
+            margin:0 auto;
+            overflow:hidden;
+            padding:5px;
+            height:50px;
+        }
+
+        .list {
+            position:absolute;
+            left:0px;
+            top:0px;
+            min-width:3000px;
+            margin-left:0px;
+            margin-top:0px;
+        }
+
+        .list li{
+            display:table-cell;
+            position:relative;
+            text-align:center;
+            cursor:grab;
+            cursor:-webkit-grab;
+            color:#efefef;
+            vertical-align:middle;
+        }
+
+        .scroller {
+            text-align:center;
+            cursor:pointer;
+            display:none;
+            padding:7px;
+            padding-top:11px;
+            white-space:no-wrap;
+            vertical-align:middle;
+            background-color:#fff;
+        }
+
+        .scroller-right{
+            float:right;
+        }
+
+        .scroller-left {
+            float:left;
+        }
+
+        li.active {
+            a {
+                border-top: 3px solid #f39200;
+                font-family: Roboto-Medium;
+                color: #555;
+            }
+        }
+        li {
+            a {
+                padding: 10px 20px;
+                position: relative;
+                cursor: pointer;
+                color: #888;
+                border-left: 1px solid #ddd;
+                border-top: 1px solid #ddd;
+                border-right: 1px solid #ddd;
+
+                i {
+                    font-size: 10px;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 1px;
+                    right: 1px;
+                }
+            }
+        }
+    }
+
+    .sheets-panel-sheet {
+        border-left: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        background-color: white;
+        position: absolute;
+        top: 45px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}

@@ -1,0 +1,155 @@
+<div class="container-fluid">
+    <div class="card card-clean">
+        <div class="header header-projects" data-background-color="lisa">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4 class="title">Projects list</h4>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <input type="text"
+                               placeholder="Search a Project"
+                               class="form-control"
+                               ng-model="projects.filters.search"
+                               ng-keyup="projects.selectProjects();">
+                        <span class="material-input"></span>
+                    </div>
+                    <!--<div class="form-group form-warning">-->
+                    <!--<input type="text"-->
+                    <!--ng-model="projects.filters.search"-->
+                    <!--ng-keyup="projects.selectProjects();"-->
+                    <!--placeholder="Search a Project"-->
+                    <!--class="form-control"/>-->
+                    <!--</div>-->
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group form-warning">
+                        <input type="date"
+                               class="form-control"
+                               placeholder="Creation date"
+                               ng-model="projects.filters.creationDate"
+                               ng-change="projects.selectProjects();"/>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <i class="material-icons pull-right" style="font-size: 30px; cursor: pointer;"
+                       ui-sref="home.detail">add</i>
+                </div>
+            </div>
+        </div>
+
+        <div layout-sizing="2" layout-vertical class="wb-panel wb-diagram-panel">
+
+            <div class="wb-panel-container">
+
+                <table class="LE-table table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            <span class="text-primary"
+                                  ng-class="{'orderBy-selected': projects.filters.orderBy === 'name DESC' || projects.filters.orderBy === 'name ASC'}"
+                                  ng-click="projects.inlineOrderBy('name');">
+                                Project Name
+                            </span>
+                            <i class="material-icons md-14 pull-rigth text-primary" ng-show="projects.filters.orderBy === 'name DESC'">keyboard_arrow_down</i>
+                            <i class="material-icons md-14 pull-rigth text-primary" ng-show="projects.filters.orderBy === 'name ASC'">keyboard_arrow_up</i>
+                        </th>
+                        <th>
+                            <span class="text-primary"
+                                  ng-class="{'orderBy-selected': projects.filters.orderBy === 'description DESC' || projects.filters.orderBy === 'description ASC'}"
+                                  ng-click="projects.inlineOrderBy('description');">
+                                Project description
+                            </span>
+                            <i class="material-icons md-14 pull-rigth text-primary" ng-show="projects.filters.orderBy === 'description DESC'">keyboard_arrow_down</i>
+                            <i class="material-icons md-14 pull-rigth text-primary" ng-show="projects.filters.orderBy === 'description ASC'">keyboard_arrow_up</i>
+                        </th>
+                        <th>
+                            <span class="text-primary"
+                                  ng-class="{'orderBy-selected': projects.filters.orderBy === 'creationDate DESC' || projects.filters.orderBy === 'creationDate ASC'}"
+                                  ng-click="projects.inlineOrderBy('creationDate');">
+                                Creation Date
+                            </span>
+                            <i class="material-icons md-14 pull-rigth text-primary" ng-show="projects.filters.orderBy === 'creationDate DESC'">keyboard_arrow_down</i>
+                            <i class="material-icons md-14 pull-rigth text-primary" ng-show="projects.filters.orderBy === 'creationDate ASC'">keyboard_arrow_up</i>
+                        </th>
+                        <th>
+                            <span class="text-primary"
+                                  ng-class="{'orderBy-selected': projects.filters.orderBy === 'creationUser DESC' || projects.filters.orderBy === 'creationUser ASC'}"
+                                  ng-click="projects.inlineOrderBy('creationUser');">
+                                User
+                            </span>
+                            <i class="material-icons md-14 pull-rigth text-primary" ng-show="projects.filters.orderBy === 'creationUser DESC'">keyboard_arrow_down</i>
+                            <i class="material-icons md-14 pull-rigth text-primary" ng-show="projects.filters.orderBy === 'creationUser ASC'">keyboard_arrow_up</i>
+                        </th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="prj in projects.allProjects">
+                        <td ng-bind="prj.name"></td>
+
+                        <td ng-hide="projects.isInedit(prj.id)" ng-bind="prj.description"></td>
+                        <td ng-show="projects.isInedit(prj.id)">
+                            <input id="project_{{prj.id}}" type="text"
+                                   ng-model="projects.projectSelected.description"
+                                   ng-keydown="projects.descriptionPressEnter($event);"/>
+                        </td>
+
+                        <td ng-bind="prj.creationDate | date:'dd-MM-yyyy'"></td>
+                        <td ng-bind="prj.creationUser"></td>
+
+                        <td class="actions" ng-show="projects.isInedit(prj.id)">
+                            <span ng-click="projects.saveProject()" class="material-icons md-24"
+                                  title="done">done</span>
+                            &nbsp;&nbsp;
+                            <span ng-click="projects.reset()" class="material-icons md-24" title="clear">clear</span>
+                        </td>
+                        <td class="actions" ng-hide="projects.isInedit(prj.id)">
+                            <span ui-sref="home.detail({project: prj})"
+                                  class="material-icons md-24" title="Edit">create</span>
+                            &nbsp;&nbsp;
+                            <span ng-click="projects.select(prj)" class="material-icons md-24"
+                                  title="Model page">call_made</span>
+                            &nbsp;&nbsp;
+
+                            <span class="material-icons md-24"
+                                  ng-click="projects.openDelete(prj, $index)"
+                                  title="Delete">delete</span>
+                            &nbsp;&nbsp;
+                            <!--<span class="material-icons md-24"
+                                  ng-click="projects.cloneProjectShow(prj, $index)"
+                                  title="Clone Project">content_copy</span>-->
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td id="pagination" colspan="5">
+                            <div class="pull-right">
+                                <label>Rows per page:</label>
+                                <select ng-model="projects.pagination.perPage"
+                                        ng-change="projects.selectProjects();">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="250">250</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                </select>
+
+                                <label>Page:</label>
+                                <select ng-model="projects.pagination.currentPage"
+                                        ng-change="projects.selectProjects();">
+                                    <option value="{{i}}" ng-repeat="i in projects.getTotPagesArray()">{{i}}</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+.container {
+    top: 102px;
+    right: 10px;
+    left: 10px;
+    bottom: 10px;
+    width: inherit !important;
+    height: inherit !important;
+}
+
+.bjs-container {
+    &:extend(.container);
+    a {
+        width: 60px !important;
+        left: 15px !important;
+    }
+}
+
+.cjs-container {
+    &:extend(.container);
+}
+
+ul.bpp-properties-tabs-links > li.bpp-active a {
+    border-top: 2px solid #f39200 !important;
+}
+
+

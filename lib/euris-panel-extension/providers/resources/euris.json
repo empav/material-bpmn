@@ -1,0 +1,49 @@
+
+    {
+        "name": "Euris",
+        "uri": "http://euris.it/schema/1.0/bpmn",
+        "prefix": "euris",
+        "xml": {
+            "tagAlias": "lowerCase"
+        },
+        "associations": [],
+        "types": [
+            {
+                "name": "rulesTask",
+                "extends": [
+                    "bpmn:ServiceTask"
+                ],
+                "properties": [
+                    {
+                        "name": "rule",
+                        "isAttr": true,
+                        "type": "String"
+                    },
+                    {
+                        "name": "pfService",
+                        "isAttr": true,
+                        "type": "String"
+                    }
+                ]
+            },
+            {
+                "name": "predefinedForm",
+                "extends": [
+                    "bpmn:UserTask"
+                ],
+                "properties":[
+                    {
+                        "name":"formRef",
+                        "isAttr": true,
+                        "type": "String"
+                    },
+                    {
+                        "name": "predefined",
+                        "isAttr": true,
+                        "type": "Boolean"
+                    }
+                ]
+            }
+        ]
+    }
+

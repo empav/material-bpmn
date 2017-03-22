@@ -1,0 +1,52 @@
+<!-- Nested node template -->
+<script type="text/ng-template" id="doRecTree.html">
+    <div ng-click="action(node)" ng-class="{'doIstance':!(node.fields.length > 0), 'doElement':(node.fields.length > 0)}" >
+        <i ng-if="node.fields.length > 0"
+              class="material-icons pull-left">
+            {{node.dropDown?'&#xE5CF;':'&#xE5CC;'}}
+        </i>
+        <span>
+            {{node.instanceName? node.instanceName: node.fieldName }}{{node.fieldType.name? ' - '+node.fieldType.name: '' }}
+        </span>
+    </div>
+    <!-- Could be nested do or base fields -->
+    <ol ng-model="node.fields" ng-if="node.dropDown">
+        <li ng-repeat="node in node.fields" ng-include="'doRecTree.html'"></li>
+    </ol>
+</script>
+
+<div class="row istanceTreeContainer">
+    <div class="row search-bar">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-5">
+            <div class="input-group">
+                <input type="text" class="form-control ng-pristine ng-valid ng-touched" ng-model="vm.searchDo" placeholder="Search for data objects...">
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="btn-group pull-right">
+                <div type="button" class="btn btn-default">Action</div>
+                <div type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a ng-click="collapseAll(list)"><i class="material-icons pull-left">&#xE5CE;</i> Collapse all</a></li>
+                    <li><a ng-click="expandAll(list)"><i class="material-icons pull-left">&#xE5CF;</i> Expand all</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Tree Nodes-->
+    <div ng-show="list.length">
+        <div class="row">
+            <!-- Tree DO -->
+            <div id="tree-do" data-clone-enabled="false" data-drag-enabled="false">
+                <ol ng-model="list">
+                    <li ng-repeat="node in list"
+                        ng-include="'doRecTree.html'"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

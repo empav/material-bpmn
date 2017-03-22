@@ -1,0 +1,1459 @@
+a:focus, a:active,
+button:active, button:focus, button:hover,
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    outline: 0 !important;
+}
+
+.form-horizontal .radio,
+.form-horizontal .checkbox,
+.form-horizontal .radio-inline,
+.form-horizontal .checkbox-inline {
+    padding-top: 0;
+}
+
+.form-horizontal .radio {
+    margin-bottom: 10px;
+}
+
+.form-horizontal label {
+    text-align: right;
+}
+
+.form-horizontal label.control-label {
+    margin: 0;
+}
+
+.form-newsletter .input-group,
+.form-newsletter .form-group {
+    float: left;
+    width: 78%;
+    margin-right: 2%;
+    margin-top: 9px;
+}
+
+.form-newsletter .btn {
+    float: left;
+    width: 20%;
+    margin: 9px 0 0;
+}
+
+.checkbox label {
+    cursor: pointer;
+    padding-left: 0;
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.form-group.is-focused .checkbox label {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.form-group.is-focused .checkbox label:hover, .form-group.is-focused .checkbox label:focus {
+    color: rgba(0, 0, 0, .54);
+}
+
+fieldset[disabled] .form-group.is-focused .checkbox label {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.checkbox input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: 0;
+    pointer-events: none;
+}
+
+.checkbox .checkbox-material {
+    vertical-align: middle;
+    position: relative;
+    top: 1px;
+    padding-right: 5px;
+    display: inline-block;
+}
+
+.checkbox .checkbox-material:before {
+    display: block;
+    position: absolute;
+    left: 0;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.84);
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    z-index: 1;
+    opacity: 0;
+    margin: 0;
+    top: 0;
+    transform: scale3d(2.3, 2.3, 1);
+}
+
+.checkbox .checkbox-material .check {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(0, 0, 0, .54);
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.checkbox .checkbox-material .check:before {
+    position: absolute;
+    content: "";
+    transform: rotate(45deg);
+    display: block;
+    margin-top: -3px;
+    margin-left: 7px;
+    width: 0;
+    height: 0;
+    background: red;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
+    animation: checkbox-off 0.3s forwards;
+}
+
+.checkbox input[type=checkbox]:focus + .checkbox-material .check:after {
+    opacity: 0.2;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check {
+    background: linear-gradient(60deg, rgba(0, 71, 133, 0.65), #004785);
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check:before {
+    color: #FFFFFF;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+    animation: checkbox-on 0.3s forwards;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material:before {
+    animation: rippleOn 500ms;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-material .check:after {
+    animation: rippleOn 500ms forwards;
+}
+
+.checkbox input[type=checkbox]:not(:checked) + .checkbox-material:before {
+    animation: rippleOff 500ms;
+}
+
+.checkbox input[type=checkbox]:not(:checked) + .checkbox-material .check:after {
+    animation: rippleOff 500ms;
+}
+
+fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
+.checkbox input[type=checkbox][disabled] ~ .checkbox-material .check,
+.checkbox input[type=checkbox][disabled] + .circle {
+    opacity: 0.5;
+}
+
+.checkbox input[type=checkbox][disabled] ~ .checkbox-material .check {
+    border-color: #000000;
+    opacity: .26;
+}
+
+.checkbox input[type=checkbox][disabled] + .checkbox-material .check:after {
+    background-color: rgba(0, 0, 0, 0.87);
+    transform: rotate(-45deg);
+}
+
+@keyframes checkbox-on {
+    0% {
+        box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+    }
+    50% {
+        box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+    }
+    100% {
+        box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+    }
+}
+
+@keyframes rippleOn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rippleOff {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.togglebutton {
+    vertical-align: middle;
+}
+
+.togglebutton, .togglebutton label, .togglebutton input, .togglebutton .toggle {
+    user-select: none;
+}
+
+.togglebutton label {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.form-group.is-focused .togglebutton label {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.form-group.is-focused .togglebutton label:hover, .form-group.is-focused .togglebutton label:focus {
+    color: rgba(0, 0, 0, .54);
+}
+
+fieldset[disabled] .form-group.is-focused .togglebutton label {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.togglebutton label input[type=checkbox] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.togglebutton label .toggle {
+    text-align: left;
+    margin-left: 5px;
+}
+
+.togglebutton label .toggle,
+.togglebutton label input[type=checkbox][disabled] + .toggle {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+    background-color: rgba(80, 80, 80, 0.7);
+    border-radius: 15px;
+    margin-right: 15px;
+    transition: background 0.3s ease;
+    vertical-align: middle;
+}
+
+.togglebutton label .toggle:after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+    left: -5px;
+    top: -3px;
+    border: 1px solid rgba(0, 0, 0, .54);
+    transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
+}
+
+.togglebutton label input[type=checkbox][disabled] + .toggle:after, .togglebutton label input[type=checkbox][disabled]:checked + .toggle:after {
+    background-color: #BDBDBD;
+}
+
+.togglebutton label input[type=checkbox] + .toggle:active:after, .togglebutton label input[type=checkbox][disabled] + .toggle:active:after {
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.togglebutton label input[type=checkbox]:checked + .toggle:after {
+    left: 15px;
+}
+
+.togglebutton label input[type=checkbox]:checked + .toggle {
+    background-color: rgba(76, 175, 80, 0.7);
+}
+
+.togglebutton label input[type=checkbox]:checked + .toggle:after {
+    border-color: #004785;
+}
+
+.togglebutton label input[type=checkbox]:checked + .toggle:active:after {
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 71, 133, 0.1);
+}
+
+.radio label {
+    cursor: pointer;
+    padding-left: 35px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.form-group.is-focused .radio label {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.form-group.is-focused .radio label:hover, .form-group.is-focused .radio label:focus {
+    color: rgba(0, 0, 0, .54);
+}
+
+fieldset[disabled] .form-group.is-focused .radio label {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.radio label span {
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 2px;
+    transition-duration: 0.2s;
+}
+
+.radio label .circle {
+    border: 1px solid rgba(0, 0, 0, .54);
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+}
+
+.radio label .check {
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background: linear-gradient(60deg, rgba(0, 71, 133, 0.65), #004785);
+    transform: scale3d(0, 0, 0);
+}
+
+.radio label .check:after {
+    display: block;
+    position: absolute;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.87);
+    left: -18px;
+    top: -18px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    z-index: 1;
+    opacity: 0;
+    margin: 0;
+    transform: scale3d(1.5, 1.5, 1);
+}
+
+.radio label input[type=radio]:not(:checked) ~ .check:after {
+    animation: rippleOff 500ms;
+}
+
+.radio label input[type=radio]:checked ~ .check:after {
+    animation: rippleOn 500ms;
+}
+
+.radio input[type=radio] {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.radio input[type=radio]:checked ~ .check, .radio input[type=radio]:checked ~ .circle {
+    opacity: 1;
+}
+
+.radio input[type=radio]:checked ~ .check {
+    background: linear-gradient(60deg, rgba(0, 71, 133, 0.65), #004785);
+}
+
+.radio input[type=radio]:checked ~ .circle {
+    border-color: #004785;
+}
+
+.radio input[type=radio]:checked ~ .check {
+    transform: scale3d(0.65, 0.65, 1);
+}
+
+.radio input[type=radio][disabled] ~ .check, .radio input[type=radio][disabled] ~ .circle {
+    opacity: 0.26;
+}
+
+.radio input[type=radio][disabled] ~ .check {
+    background-color: #000000;
+}
+
+.radio input[type=radio][disabled] ~ .circle {
+    border-color: #000000;
+}
+
+@keyframes rippleOn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rippleOff {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+legend {
+    margin-bottom: 20px;
+    font-size: 21px;
+}
+
+output {
+    padding-top: 8px;
+    font-size: 14px;
+    line-height: 1.42857;
+}
+
+.form-control {
+    height: 36px;
+    padding: 7px 0;
+    font-size: 14px;
+    line-height: 1.42857;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="date"].form-control,
+    input[type="time"].form-control,
+    input[type="datetime-local"].form-control,
+    input[type="month"].form-control {
+        line-height: 36px;
+    }
+
+    input[type="date"].input-sm, .input-group-sm input[type="date"],
+    input[type="time"].input-sm, .input-group-sm
+    input[type="time"],
+    input[type="datetime-local"].input-sm, .input-group-sm
+    input[type="datetime-local"],
+    input[type="month"].input-sm, .input-group-sm
+    input[type="month"] {
+        line-height: 24px;
+    }
+
+    input[type="date"].input-lg, .input-group-lg input[type="date"],
+    input[type="time"].input-lg, .input-group-lg
+    input[type="time"],
+    input[type="datetime-local"].input-lg, .input-group-lg
+    input[type="datetime-local"],
+    input[type="month"].input-lg, .input-group-lg
+    input[type="month"] {
+        line-height: 44px;
+    }
+}
+
+.radio label,
+.checkbox label {
+    min-height: 20px;
+}
+
+.form-control-static {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-height: 34px;
+}
+
+.input-sm .input-sm {
+    height: 24px;
+    padding: 3px 0;
+    font-size: 11px;
+    line-height: 1.5;
+    border-radius: 0;
+}
+
+.input-sm select.input-sm {
+    height: 24px;
+    line-height: 24px;
+}
+
+.input-sm textarea.input-sm,
+.input-sm select[multiple].input-sm {
+    height: auto;
+}
+
+.form-group-sm .form-control {
+    height: 24px;
+    padding: 3px 0;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.form-group-sm select.form-control {
+    height: 24px;
+    line-height: 24px;
+}
+
+.form-group-sm textarea.form-control,
+.form-group-sm select[multiple].form-control {
+    height: auto;
+}
+
+.form-group-sm .form-control-static {
+    height: 24px;
+    min-height: 31px;
+    padding: 4px 0;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.input-lg .input-lg {
+    height: 44px;
+    padding: 9px 0;
+    font-size: 18px;
+    line-height: 1.33333;
+    border-radius: 0;
+}
+
+.input-lg select.input-lg {
+    height: 44px;
+    line-height: 44px;
+}
+
+.input-lg textarea.input-lg,
+.input-lg select[multiple].input-lg {
+    height: auto;
+}
+
+.form-group-lg .form-control {
+    height: 44px;
+    padding: 9px 0;
+    font-size: 18px;
+    line-height: 1.33333;
+}
+
+.form-group-lg select.form-control {
+    height: 44px;
+    line-height: 44px;
+}
+
+.form-group-lg textarea.form-control,
+.form-group-lg select[multiple].form-control {
+    height: auto;
+}
+
+.form-group-lg .form-control-static {
+    height: 44px;
+    min-height: 38px;
+    padding: 10px 0;
+    font-size: 18px;
+    line-height: 1.33333;
+}
+
+.form-horizontal .radio,
+.form-horizontal .checkbox,
+.form-horizontal .radio-inline,
+.form-horizontal .checkbox-inline {
+    padding-top: 8px;
+}
+
+.form-horizontal .radio,
+.form-horizontal .checkbox {
+    min-height: 28px;
+}
+
+@media (min-width: 768px) {
+    .form-horizontal .control-label {
+        padding-top: 8px;
+    }
+}
+
+@media (min-width: 768px) {
+    .form-horizontal .form-group-lg .control-label {
+        padding-top: 13.0px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    .form-horizontal .form-group-sm .control-label {
+        padding-top: 4px;
+        font-size: 11px;
+    }
+}
+
+.label {
+    border-radius: 2px;
+}
+
+.label, .label.label-default {
+    background-color: #FFFFFF;
+}
+
+.label.label-inverse {
+    background-color: #212121;
+}
+
+.label.label-primary {
+    background: linear-gradient(60deg, rgba(0, 71, 133, 0.65), #004785);
+}
+
+.label.label-success {
+    background: linear-gradient(60deg, rgba(76, 175, 80, 0.65), #4CAF50);
+}
+
+.label.label-info {
+    background-color: #00bcd4;
+}
+
+.label.label-warning {
+    background-color: #ff9800;
+}
+
+.label.label-danger {
+    background-color: #f44336;
+}
+
+.label.label-rose {
+    background-color: #e91e63;
+}
+
+.form-control,
+.form-group .form-control {
+    border: 0;
+    background-image: linear-gradient(#004785, #004785), linear-gradient(#D2D2D2, #D2D2D2);
+    background-size: 0 2px, 100% 0px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center ~"calc(100% - 1px)";
+    background-color: transparent;
+    transition: background 0s ease-out;
+    float: none;
+    box-shadow: none;
+    border-radius: 0;
+    font-weight: 400;
+}
+
+.form-control::-moz-placeholder,
+.form-group .form-control::-moz-placeholder {
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-control:-ms-input-placeholder,
+.form-group .form-control:-ms-input-placeholder {
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-control::-webkit-input-placeholder,
+.form-group .form-control::-webkit-input-placeholder {
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-control[readonly], .form-control[disabled], fieldset[disabled] .form-control,
+.form-group .form-control[readonly],
+.form-group .form-control[disabled], fieldset[disabled]
+  .form-group .form-control {
+    background-color: transparent;
+}
+
+.form-control[disabled], fieldset[disabled] .form-control,
+.form-group .form-control[disabled], fieldset[disabled]
+  .form-group .form-control {
+    background-image: none;
+    border-bottom: 1px dotted #D2D2D2;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group.label-static label.control-label, .form-group.label-placeholder label.control-label, .form-group.label-floating label.control-label {
+    position: absolute;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+.form-group.label-floating label.control-label {
+    will-change: left, top, contents;
+}
+
+.form-group.label-placeholder:not(.is-empty) label.control-label {
+    display: none;
+}
+
+.form-group .help-block {
+    position: absolute;
+    display: none;
+}
+
+.form-group.is-focused .form-control {
+    outline: none;
+    background-image: linear-gradient(#004785, #004785), linear-gradient(#D2D2D2, #D2D2D2);
+    background-size: 100% 2px, 100% 1px;
+    box-shadow: none;
+    transition-duration: 0.3s;
+}
+
+.form-group.is-focused .form-control .material-input:after {
+    background: linear-gradient(60deg, rgba(0, 71, 133, 0.65), #004785);
+}
+
+.form-group.is-focused.form-info .form-control {
+    background-image: linear-gradient(#00bcd4, #00bcd4), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.is-focused.form-success .form-control {
+    background-image: linear-gradient(#4CAF50, #4CAF50), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.is-focused.form-warning .form-control {
+    background-image: linear-gradient(#ff9800, #ff9800), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.is-focused.form-danger .form-control {
+    background-image: linear-gradient(#f44336, #f44336), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.is-focused.form-rose .form-control {
+    background-image: linear-gradient(#e91e63, #e91e63), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.is-focused.form-white .form-control {
+    background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.is-focused.label-placeholder label,
+.form-group.is-focused.label-placeholder label.control-label {
+    color: #AAAAAA;
+}
+
+.form-group.is-focused .help-block {
+    display: block;
+}
+
+.form-group.has-warning .form-control {
+    box-shadow: none;
+}
+
+.form-group.has-warning.is-focused .form-control {
+    background-image: linear-gradient(#ff9800, #ff9800), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.has-warning label.control-label,
+.form-group.has-warning .help-block {
+    color: #ff9800;
+}
+
+.form-group.has-error .form-control {
+    box-shadow: none;
+}
+
+.form-group.has-error.is-focused .form-control {
+    background-image: linear-gradient(#f44336, #f44336), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.has-error label.control-label,
+.form-group.has-error .help-block {
+    color: #f44336;
+}
+
+.form-group.has-success .form-control {
+    box-shadow: none;
+}
+
+.form-group.has-success.is-focused .form-control {
+    background-image: linear-gradient(#4CAF50, #4CAF50), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.has-success label.control-label,
+.form-group.has-success .help-block {
+    color: #4CAF50;
+}
+
+.form-group.has-info .form-control {
+    box-shadow: none;
+}
+
+.form-group.has-info.is-focused .form-control {
+    background-image: linear-gradient(#00bcd4, #00bcd4), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
+.form-group.has-info label.control-label,
+.form-group.has-info .help-block {
+    color: #00bcd4;
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.form-group textarea ~ .form-control-highlight {
+    margin-top: -11px;
+}
+
+.form-group select {
+    appearance: none;
+}
+
+.form-group select ~ .material-input:after {
+    display: none;
+}
+
+.form-control::-moz-placeholder {
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-control:-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-control::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.checkbox label,
+.radio label,
+label {
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+label.control-label {
+    font-size: 11px;
+    line-height: 1.07143;
+    color: #AAAAAA;
+    font-weight: 400;
+    margin: 16px 0 0 0;
+}
+
+.help-block {
+    margin-top: 0;
+    font-size: 11px;
+}
+
+.form-group {
+    margin: 27px 0 0 0;
+}
+
+.form-group.form-group-nomargin{
+    margin: 0;
+}
+
+.form-group .form-control {
+    margin-bottom: 0px;
+}
+
+.form-group .form-control::-moz-placeholder {
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group .form-control:-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group .form-control::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group .checkbox label,
+.form-group .radio label,
+.form-group label {
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group label.control-label {
+    font-size: 11px;
+    line-height: 1.07143;
+    color: #AAAAAA;
+    font-weight: 400;
+    margin: 16px 0 0 0;
+}
+
+.form-group .help-block {
+    margin-top: 0;
+    font-size: 11px;
+}
+
+.form-group.label-floating label.control-label, .form-group.label-placeholder label.control-label {
+    font-size: 14px;
+    line-height: 1.42857;
+}
+
+.form-group.label-static label.control-label, .form-group.label-floating.is-focused label.control-label, .form-group.label-floating:not(.is-empty) label.control-label {
+    top: -28px;
+    left: 0;
+    font-size: 11px;
+    line-height: 1.07143;
+}
+
+.form-group.label-floating input.form-control:-webkit-autofill ~ label.control-label label.control-label {
+    top: -28px;
+    left: 0;
+    font-size: 11px;
+    line-height: 1.07143;
+}
+
+.form-group.form-group-sm {
+    padding-bottom: 3px;
+    margin: 21px 0 0 0;
+}
+
+.form-group.form-group-sm .form-control {
+    margin-bottom: 3px;
+}
+
+.form-group.form-group-sm .form-control::-moz-placeholder {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group.form-group-sm .form-control:-ms-input-placeholder {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group.form-group-sm .form-control::-webkit-input-placeholder {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group.form-group-sm .checkbox label,
+.form-group.form-group-sm .radio label,
+.form-group.form-group-sm label {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group.form-group-sm label.control-label {
+    font-size: 9px;
+    line-height: 1.125;
+    color: #AAAAAA;
+    font-weight: 400;
+    margin: 16px 0 0 0;
+}
+
+.form-group.form-group-sm .help-block {
+    margin-top: 0;
+    font-size: 9px;
+}
+
+.form-group.form-group-sm.label-floating label.control-label, .form-group.form-group-sm.label-placeholder label.control-label {
+    top: -11px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.form-group.form-group-sm.label-static label.control-label, .form-group.form-group-sm.label-floating.is-focused label.control-label, .form-group.form-group-sm.label-floating:not(.is-empty) label.control-label {
+    top: -25px;
+    left: 0;
+    font-size: 9px;
+    line-height: 1.125;
+}
+
+.form-group.form-group-sm.label-floating input.form-control:-webkit-autofill ~ label.control-label label.control-label {
+    top: -25px;
+    left: 0;
+    font-size: 9px;
+    line-height: 1.125;
+}
+
+.form-group.form-group-lg {
+    padding-bottom: 9px;
+    margin: 30px 0 0 0;
+}
+
+.form-group.form-group-lg .form-control {
+    margin-bottom: 9px;
+}
+
+.form-group.form-group-lg .form-control::-moz-placeholder {
+    font-size: 18px;
+    line-height: 1.33333;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group.form-group-lg .form-control:-ms-input-placeholder {
+    font-size: 18px;
+    line-height: 1.33333;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group.form-group-lg .form-control::-webkit-input-placeholder {
+    font-size: 18px;
+    line-height: 1.33333;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group.form-group-lg .checkbox label,
+.form-group.form-group-lg .radio label,
+.form-group.form-group-lg label {
+    font-size: 18px;
+    line-height: 1.33333;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+.form-group.form-group-lg label.control-label {
+    font-size: 14px;
+    line-height: 1.0;
+    color: #AAAAAA;
+    font-weight: 400;
+    margin: 16px 0 0 0;
+}
+
+.form-group.form-group-lg .help-block {
+    margin-top: 0;
+    font-size: 14px;
+}
+
+.form-group.form-group-lg.label-floating label.control-label, .form-group.form-group-lg.label-placeholder label.control-label {
+    top: -5px;
+    font-size: 18px;
+    line-height: 1.33333;
+}
+
+.form-group.form-group-lg.label-static label.control-label, .form-group.form-group-lg.label-floating.is-focused label.control-label, .form-group.form-group-lg.label-floating:not(.is-empty) label.control-label {
+    top: -32px;
+    left: 0;
+    font-size: 14px;
+    line-height: 1.0;
+}
+
+.form-group.form-group-lg.label-floating input.form-control:-webkit-autofill ~ label.control-label label.control-label {
+    top: -32px;
+    left: 0;
+    font-size: 14px;
+    line-height: 1.0;
+}
+
+select.form-control {
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.form-group.is-focused select.form-control {
+    box-shadow: none;
+    border-color: #D2D2D2;
+}
+
+select.form-control[multiple], .form-group.is-focused select.form-control[multiple] {
+    height: 85px;
+}
+
+
+.input-group-btn .btn {
+    margin: 0 0 7px 0;
+}
+
+.form-group.form-group-sm .input-group-btn .btn {
+    margin: 0 0 3px 0;
+}
+
+.form-group.form-group-lg .input-group-btn .btn {
+    margin: 0 0 9px 0;
+}
+
+.input-group .input-group-btn {
+    padding: 0 12px;
+}
+
+.input-group .input-group-addon {
+    border: 0;
+    background: transparent;
+    padding: 6px 15px 0px;
+}
+
+.form-group input[type=file] {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.form-control-feedback {
+    opacity: 0;
+}
+
+.has-success .form-control-feedback {
+    color: #4CAF50;
+    opacity: 1;
+}
+
+.has-error .form-control-feedback {
+    color: #f44336;
+    opacity: 1;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.btn-file > input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 23px;
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    direction: ltr;
+}
+
+.fileinput {
+    display: inline-block;
+    margin-bottom: 9px;
+}
+
+.fileinput .form-control {
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    cursor: text;
+}
+
+.fileinput .thumbnail {
+    display: inline-block;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 360px;
+}
+
+.fileinput .thumbnail.img-circle {
+    border-radius: 50%;
+    max-width: 100px;
+}
+
+.fileinput .thumbnail > img {
+    max-height: 100%;
+}
+
+.fileinput .btn {
+    vertical-align: middle;
+}
+
+.fileinput-exists .fileinput-new,
+.fileinput-new .fileinput-exists {
+    display: none;
+}
+
+.fileinput-inline .fileinput-controls {
+    display: inline;
+}
+
+.fileinput-filename {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.form-control .fileinput-filename {
+    vertical-align: bottom;
+}
+
+.fileinput.input-group {
+    display: table;
+}
+
+.fileinput.input-group > * {
+    position: relative;
+    z-index: 2;
+}
+
+.fileinput.input-group > .btn-file {
+    z-index: 1;
+}
+
+.fileinput-new.input-group .btn-file,
+.fileinput-new .input-group .btn-file {
+    border-radius: 0 4px 4px 0;
+}
+
+.fileinput-new.input-group .btn-file.btn-xs,
+.fileinput-new .input-group .btn-file.btn-xs,
+.fileinput-new.input-group .btn-file.btn-sm,
+.fileinput-new .input-group .btn-file.btn-sm {
+    border-radius: 0 3px 3px 0;
+}
+
+.fileinput-new.input-group .btn-file.btn-lg,
+.fileinput-new .input-group .btn-file.btn-lg {
+    border-radius: 0 6px 6px 0;
+}
+
+.form-group.has-warning .fileinput .fileinput-preview {
+    color: #ff9800;
+}
+
+.form-group.has-warning .fileinput .thumbnail {
+    border-color: #ff9800;
+}
+
+.form-group.has-error .fileinput .fileinput-preview {
+    color: #f44336;
+}
+
+.form-group.has-error .fileinput .thumbnail {
+    border-color: #f44336;
+}
+
+.form-group.has-success .fileinput .fileinput-preview {
+    color: #4CAF50;
+}
+
+.form-group.has-success .fileinput .thumbnail {
+    border-color: #4CAF50;
+}
+
+.input-group-addon:not(:first-child) {
+    border-left: 0;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.btn-file > input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 23px;
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    direction: ltr;
+}
+
+.fileinput {
+    display: inline-block;
+    margin-bottom: 9px;
+}
+
+.fileinput .form-control {
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    cursor: text;
+}
+
+.fileinput .thumbnail {
+    display: inline-block;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 360px;
+}
+
+.fileinput .thumbnail.img-circle {
+    border-radius: 50%;
+    max-width: 100px;
+}
+
+.fileinput .thumbnail > img {
+    max-height: 100%;
+}
+
+.fileinput .btn {
+    vertical-align: middle;
+}
+
+.fileinput-exists .fileinput-new,
+.fileinput-new .fileinput-exists {
+    display: none;
+}
+
+.fileinput-inline .fileinput-controls {
+    display: inline;
+}
+
+.fileinput-filename {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.form-control .fileinput-filename {
+    vertical-align: bottom;
+}
+
+.fileinput.input-group {
+    display: table;
+}
+
+.fileinput.input-group > * {
+    position: relative;
+    z-index: 2;
+}
+
+.fileinput.input-group > .btn-file {
+    z-index: 1;
+}
+
+.fileinput-new.input-group .btn-file,
+.fileinput-new .input-group .btn-file {
+    border-radius: 0 4px 4px 0;
+}
+
+.fileinput-new.input-group .btn-file.btn-xs,
+.fileinput-new .input-group .btn-file.btn-xs,
+.fileinput-new.input-group .btn-file.btn-sm,
+.fileinput-new .input-group .btn-file.btn-sm {
+    border-radius: 0 3px 3px 0;
+}
+
+.fileinput-new.input-group .btn-file.btn-lg,
+.fileinput-new .input-group .btn-file.btn-lg {
+    border-radius: 0 6px 6px 0;
+}
+
+.form-group.has-warning .fileinput .fileinput-preview {
+    color: #ff9800;
+}
+
+.form-group.has-warning .fileinput .thumbnail {
+    border-color: #ff9800;
+}
+
+.form-group.has-error .fileinput .fileinput-preview {
+    color: #f44336;
+}
+
+.form-group.has-error .fileinput .thumbnail {
+    border-color: #f44336;
+}
+
+.form-group.has-success .fileinput .fileinput-preview {
+    color: #4CAF50;
+}
+
+.form-group.has-success .fileinput .thumbnail {
+    border-color: #4CAF50;
+}
+
+.input-group-addon:not(:first-child) {
+    border-left: 0;
+}
+
+input[type="text"], input[type="email"], textarea {
+    border: 0px solid #FFFFFF !important;
+}
+
+input[type="text"]:disabled, input[type="email"]:disabled, textarea:disabled {
+    border-bottom: 2px dotted #D2D2D2 !important;
+    color: rgba(204, 204, 204, 0.69);
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus
+input[type="text"]:hover, input[type="email"]:hover, textarea:hover {
+    border-bottom: 0px solid #FFFFFF !important
+}
+
+
+textarea, input[type="text"], input[type="date"], input[type="email"] {
+    background: none;
+    border: 0px solid #000000 !important;
+}
+
+.form-control{
+    border-bottom: 0px solid #CCCCCC !important;
+    margin-bottom: 0;
+}
+
+.form-group {
+    width:100%;
+    color: #666;display:inline-block;
+    margin-bottom:0;
+    text-transform:uppercase;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 0;
+    width: 100%;
+}
+
+.form-group:hover {
+    color: #666;display:inline-block;
+    text-transform:uppercase;
+    border-bottom: 0;
+}
+
+.form-group:after {
+    display:block;
+    content: '';
+    border-bottom: solid 2px #f39200;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.form-group:hover:after {
+    transform: scaleX(1);
+}
+
+.form-group-search{
+    width: auto;
+}

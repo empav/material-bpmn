@@ -1,0 +1,273 @@
+{
+    "operationResult": "OK",
+    "messages": [],
+    "list": [
+        {
+            "resourceId": "c45b5569-5352-44ce-891e-ac3bcdb72191",
+            "projectId": "7fd44cef-0442-4c0c-a8da-e5b74866d8df",
+            "projectName": "ILT_001",
+            "cfgResourceTypes": {
+                "id": 1,
+                "description": "BPMN"
+            },
+            "resourceName": "prova1",
+            "resourceData": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<bpmn:definitions xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:bpmn=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:di=\"http://www.omg.org/spec/DD/20100524/DI\" id=\"Definitions_1\" targetNamespace=\"http://bpmn.io/schema/bpmn\">\n  <bpmn:process id=\"Process_1\" isExecutable=\"false\">\n    <bpmn:startEvent id=\"StartEvent_1\">\n      <bpmn:outgoing>SequenceFlow_05lrz3a</bpmn:outgoing>\n    </bpmn:startEvent>\n    <bpmn:task id=\"Task_0mss9pq\" name=\"asd\">\n      <bpmn:incoming>SequenceFlow_05lrz3a</bpmn:incoming>\n      <bpmn:outgoing>SequenceFlow_1tmtho9</bpmn:outgoing>\n    </bpmn:task>\n    <bpmn:endEvent id=\"EndEvent_17cwweq\">\n      <bpmn:incoming>SequenceFlow_1tmtho9</bpmn:incoming>\n    </bpmn:endEvent>\n    <bpmn:sequenceFlow id=\"SequenceFlow_05lrz3a\" sourceRef=\"StartEvent_1\" targetRef=\"Task_0mss9pq\" />\n    <bpmn:sequenceFlow id=\"SequenceFlow_1tmtho9\" sourceRef=\"Task_0mss9pq\" targetRef=\"EndEvent_17cwweq\" />\n  </bpmn:process>\n  <bpmndi:BPMNDiagram id=\"BPMNDiagram_1\">\n    <bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Process_1\">\n      <bpmndi:BPMNShape id=\"_BPMNShape_StartEvent_2\" bpmnElement=\"StartEvent_1\">\n        <dc:Bounds x=\"173\" y=\"102\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Task_0mss9pq_di\" bpmnElement=\"Task_0mss9pq\">\n        <dc:Bounds x=\"364\" y=\"90\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"EndEvent_17cwweq_di\" bpmnElement=\"EndEvent_17cwweq\">\n        <dc:Bounds x=\"703\" y=\"102\" width=\"36\" height=\"36\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"721\" y=\"138\" width=\"0\" height=\"0\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_05lrz3a_di\" bpmnElement=\"SequenceFlow_05lrz3a\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"209\" y=\"120\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"287\" y=\"120\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"287\" y=\"130\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"364\" y=\"130\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"302\" y=\"115\" width=\"0\" height=\"0\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_1tmtho9_di\" bpmnElement=\"SequenceFlow_1tmtho9\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"464\" y=\"130\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"584\" y=\"130\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"584\" y=\"120\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"703\" y=\"120\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"599\" y=\"115\" width=\"0\" height=\"0\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n    </bpmndi:BPMNPlane>\n  </bpmndi:BPMNDiagram>\n</bpmn:definitions>\n",
+            "resourceDoList": []
+        },
+        {
+            "resourceId": "e8755c8e-ecb2-4c06-9519-b778716915a0",
+            "projectId": "7fd44cef-0442-4c0c-a8da-e5b74866d8df",
+            "projectName": "ILT_001",
+            "cfgResourceTypes": {
+                "id": 1,
+                "description": "BPMN"
+            },
+            "resourceName": "prova",
+            "resourceData": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<bpmn:definitions xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:bpmn=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:camunda=\"http://camunda.org/schema/1.0/bpmn\" xmlns:di=\"http://www.omg.org/spec/DD/20100524/DI\" xmlns:euris=\"http://euris.it/schema/1.0/bpmn\" xmlns:color=\"http://euris.it/schema/1.0/colors\" id=\"Definitions_1\" targetNamespace=\"http://bpmn.io/schema/bpmn\">\n  <bpmn:process id=\"Process_1\" name=\"DEMO POC\" isExecutable=\"true\">\n    <bpmn:sequenceFlow id=\"SequenceFlow_1x2ox29\" sourceRef=\"StartEvent_1\" targetRef=\"Task_1f6tnnf\" />\n    <bpmn:userTask id=\"Task_1f6tnnf\" name=\"CONTRACTOR SEARCH\" camunda:formKey=\"CONTRACTOR_SEARCH\" camunda:assignee=\"admin\">\n      <bpmn:extensionElements>\n        <camunda:formData>\n          <camunda:formField id=\"formKey\" label=\"Ricerca contraente\" type=\"string\" defaultValue=\"CONTRACTOR_SEARCH\" />\n          <camunda:formField id=\"id_contractor\" label=\"Id Contraente\" type=\"string\" defaultValue=\"\" instanceAttributeRef=\"polizza1.IdPolizza\" />\n          <camunda:formField id=\"age_contractoreeeee\" label=\"Eta Contr\" type=\"long\" instanceAttributeRef=\"polizza1.IdPolizza\" />\n          <camunda:formField id=\"age_a_contractor\" label=\"Eta Assic. Contraente\" type=\"long\" instanceAttributeRef=\"polizza1.ProdottoPolizza\" />\n        </camunda:formData>\n      </bpmn:extensionElements>\n      <bpmn:incoming>SequenceFlow_1x2ox29</bpmn:incoming>\n      <bpmn:outgoing>SequenceFlow_1u8ctfw</bpmn:outgoing>\n    </bpmn:userTask>\n    <bpmn:userTask id=\"Task_0teltxm\" name=\"SEARCH PROD.\" camunda:formKey=\"CONTRACTOR_SEARCH\" camunda:assignee=\"admin\" euris:formRef=\"\" euris:predefined=\"false\">\n      <bpmn:extensionElements>\n        <camunda:formData>\n          <camunda:formField id=\"1\" label=\"name1\" instanceAttributeRef=\"polizza1.ProdottoPolizza\" listType=\"true\" />\n          <camunda:formField id=\"2\" label=\"name2\" instanceAttributeRef=\"cliente1.nome\" />\n        </camunda:formData>\n      </bpmn:extensionElements>\n      <bpmn:incoming>SequenceFlow_0b04mvt</bpmn:incoming>\n      <bpmn:outgoing>SequenceFlow_18zlsmx</bpmn:outgoing>\n    </bpmn:userTask>\n    <bpmn:sequenceFlow id=\"SequenceFlow_18zlsmx\" sourceRef=\"Task_0teltxm\" targetRef=\"Task_1joepk4\" />\n    <bpmn:serviceTask id=\"Task_1joepk4\" name=\"EXECUTE RULE\" euris:rule=\"4\">\n      <bpmn:extensionElements>\n        <camunda:properties>\n          <camunda:property name=\"task_type\" value=\"rule_execution\" />\n          <camunda:property name=\"id_rule\" value=\"12\" />\n          <camunda:property name=\"PURO_V\" value=\"polizza2.IdPolizza\" />\n          <camunda:property name=\"V_PURO\" />\n          <camunda:property name=\"TT\" />\n          <camunda:property name=\"N\" value=\"polizza2.IdPolizza\" />\n          <camunda:property name=\"CAPITALE\" value=\"polizza2.IdPolizza\" />\n          <camunda:property name=\"Vettori\" />\n          <camunda:property name=\"PURO\" />\n          <camunda:property name=\"ETA\" value=\"polizza1.PRODOTTO.ID\" />\n        </camunda:properties>\n      </bpmn:extensionElements>\n      <bpmn:incoming>SequenceFlow_18zlsmx</bpmn:incoming>\n      <bpmn:outgoing>SequenceFlow_01i39xk</bpmn:outgoing>\n    </bpmn:serviceTask>\n    <bpmn:sequenceFlow id=\"SequenceFlow_01i39xk\" sourceRef=\"Task_1joepk4\" targetRef=\"Task_1c0ny17\" />\n    <bpmn:userTask id=\"Task_1c0ny17\" name=\"RESULT\" camunda:assignee=\"admin\">\n      <bpmn:extensionElements>\n        <camunda:formData>\n          <camunda:formField id=\"premio_risultato\" label=\"Risultato\" type=\"string\" />\n          <camunda:formField id=\"valore\" label=\"Valorizzazione\" type=\"long\" instanceAttributeRef=\"[object Object].NUMERO\" />\n        </camunda:formData>\n      </bpmn:extensionElements>\n      <bpmn:incoming>SequenceFlow_01i39xk</bpmn:incoming>\n      <bpmn:outgoing>SequenceFlow_0f7oz2h</bpmn:outgoing>\n    </bpmn:userTask>\n    <bpmn:endEvent id=\"EndEvent_1878ywf\">\n      <bpmn:incoming>SequenceFlow_0f7oz2h</bpmn:incoming>\n    </bpmn:endEvent>\n    <bpmn:sequenceFlow id=\"SequenceFlow_0f7oz2h\" sourceRef=\"Task_1c0ny17\" targetRef=\"EndEvent_1878ywf\" />\n    <bpmn:startEvent id=\"StartEvent_1\">\n      <bpmn:outgoing>SequenceFlow_1x2ox29</bpmn:outgoing>\n    </bpmn:startEvent>\n    <bpmn:exclusiveGateway id=\"ExclusiveGateway_0zntfsd\">\n      <bpmn:incoming>SequenceFlow_1u8ctfw</bpmn:incoming>\n      <bpmn:outgoing>SequenceFlow_0b04mvt</bpmn:outgoing>\n      <bpmn:outgoing>SequenceFlow_0vej931</bpmn:outgoing>\n    </bpmn:exclusiveGateway>\n    <bpmn:sequenceFlow id=\"SequenceFlow_1u8ctfw\" sourceRef=\"Task_1f6tnnf\" targetRef=\"ExclusiveGateway_0zntfsd\" />\n    <bpmn:sequenceFlow id=\"SequenceFlow_0b04mvt\" name=\"id_contractor = 2\" sourceRef=\"ExclusiveGateway_0zntfsd\" targetRef=\"Task_0teltxm\">\n      <bpmn:conditionExpression xsi:type=\"bpmn:tFormalExpression\">${id_contractor = 2}</bpmn:conditionExpression>\n    </bpmn:sequenceFlow>\n    <bpmn:endEvent id=\"EndEvent_180p1du\">\n      <bpmn:incoming>SequenceFlow_0vej931</bpmn:incoming>\n    </bpmn:endEvent>\n    <bpmn:sequenceFlow id=\"SequenceFlow_0vej931\" name=\"id_contractor &#62; 2\" sourceRef=\"ExclusiveGateway_0zntfsd\" targetRef=\"EndEvent_180p1du\">\n      <bpmn:conditionExpression xsi:type=\"bpmn:tFormalExpression\"><![CDATA[${id_contractor > 2}]]></bpmn:conditionExpression>\n    </bpmn:sequenceFlow>\n    <bpmn:textAnnotation id=\"TextAnnotation_17q2gdc\">    <bpmn:text>sdfsdf</bpmn:text>\n</bpmn:textAnnotation>\n    <bpmn:association id=\"Association_1lz3nhw\" sourceRef=\"Task_1f6tnnf\" targetRef=\"TextAnnotation_17q2gdc\" />\n  </bpmn:process>\n  <bpmndi:BPMNDiagram id=\"BPMNDiagram_1\">\n    <bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Process_1\">\n      <bpmndi:BPMNEdge id=\"SequenceFlow_1x2ox29_di\" bpmnElement=\"SequenceFlow_1x2ox29\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"207\" y=\"314\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"248\" y=\"314\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"248\" y=\"322\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"289\" y=\"322\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"263\" y=\"318\" width=\"0\" height=\"0\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"UserTask_0ad472u_di\" bpmnElement=\"Task_1f6tnnf\" color:background-color=\"#b3ff83\">\n        <dc:Bounds x=\"289\" y=\"282\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"UserTask_1678067_di\" bpmnElement=\"Task_0teltxm\" color:background-color=\"#b3ff83\">\n        <dc:Bounds x=\"531\" y=\"282\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_18zlsmx_di\" bpmnElement=\"SequenceFlow_18zlsmx\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"631\" y=\"322\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"770\" y=\"322\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"655.5\" y=\"297\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"ServiceTask_0t0i0vi_di\" bpmnElement=\"Task_1joepk4\" color:background-color=\"#bbe6e3\">\n        <dc:Bounds x=\"770\" y=\"282\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_01i39xk_di\" bpmnElement=\"SequenceFlow_01i39xk\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"870\" y=\"322\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"972\" y=\"322\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"876\" y=\"297\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"UserTask_0dvhqv8_di\" bpmnElement=\"Task_1c0ny17\">\n        <dc:Bounds x=\"972\" y=\"282\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"EndEvent_1878ywf_di\" bpmnElement=\"EndEvent_1878ywf\">\n        <dc:Bounds x=\"1148\" y=\"304\" width=\"36\" height=\"36\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"1121\" y=\"340\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_0f7oz2h_di\" bpmnElement=\"SequenceFlow_0f7oz2h\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"1072\" y=\"322\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"1148\" y=\"322\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"1065\" y=\"297\" width=\"90\" height=\"20\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"StartEvent_06bwfso_di\" bpmnElement=\"StartEvent_1\">\n        <dc:Bounds x=\"171\" y=\"296\" width=\"36\" height=\"36\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"189\" y=\"332\" width=\"0\" height=\"0\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"TextAnnotation_17q2gdc_di\" bpmnElement=\"TextAnnotation_17q2gdc\">\n        <dc:Bounds x=\"369\" y=\"132\" width=\"100\" height=\"30\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"Association_1lz3nhw_di\" bpmnElement=\"Association_1lz3nhw\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"357\" y=\"282\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"412\" y=\"162\" />\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"ExclusiveGateway_0zntfsd_di\" bpmnElement=\"ExclusiveGateway_0zntfsd\" isMarkerVisible=\"true\">\n        <dc:Bounds x=\"411\" y=\"297\" width=\"50\" height=\"50\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"436\" y=\"347\" width=\"0\" height=\"0\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_1u8ctfw_di\" bpmnElement=\"SequenceFlow_1u8ctfw\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"389\" y=\"322\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"411\" y=\"322\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"400\" y=\"307\" width=\"0\" height=\"0\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_0b04mvt_di\" bpmnElement=\"SequenceFlow_0b04mvt\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"461\" y=\"322\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"496\" y=\"322\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"496\" y=\"322\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"531\" y=\"322\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"470\" y=\"322\" width=\"82\" height=\"12\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNShape id=\"EndEvent_180p1du_di\" bpmnElement=\"EndEvent_180p1du\">\n        <dc:Bounds x=\"418\" y=\"473\" width=\"36\" height=\"36\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"436\" y=\"509\" width=\"0\" height=\"0\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"SequenceFlow_0vej931_di\" bpmnElement=\"SequenceFlow_0vej931\">\n        <di:waypoint xsi:type=\"dc:Point\" x=\"436\" y=\"347\" />\n        <di:waypoint xsi:type=\"dc:Point\" x=\"436\" y=\"473\" />\n        <bpmndi:BPMNLabel>\n          <dc:Bounds x=\"410\" y=\"410\" width=\"82\" height=\"12\" />\n        </bpmndi:BPMNLabel>\n      </bpmndi:BPMNEdge>\n    </bpmndi:BPMNPlane>\n  </bpmndi:BPMNDiagram>\n</bpmn:definitions>\n",
+            "resourceDoList": [
+                {
+                    "fieldName": "cliente",
+                    "fieldType": {
+                        "name": "cliente",
+                        "cod": null,
+                        "description": "cliente",
+                        "elementaryType": null,
+                        "validations": null
+                    },
+                    "dimensions": 0,
+                    "fieldLabel": "Cliente",
+                    "source": null,
+                    "version": null,
+                    "keyFields": null,
+                    "fields": [
+                        {
+                            "fieldName": "nome",
+                            "fieldType": {
+                                "name": "stringa_1000",
+                                "cod": "BSTYP_21",
+                                "description": "stringa",
+                                "elementaryType": "STRING",
+                                "validations": [
+                                    {
+                                        "key": "stringMinLength",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "key": "stringMaxLength",
+                                        "value": "1000"
+                                    }
+                                ]
+                            },
+                            "dimensions": 0,
+                            "fieldLabel": "Nome Cliente",
+                            "source": null,
+                            "version": null,
+                            "keyFields": null,
+                            "fields": null,
+                            "instances": null,
+                            "key": false
+                        },
+                        {
+                            "fieldName": "cognome",
+                            "fieldType": {
+                                "name": "STRINGA_10000",
+                                "cod": "BSTYP_18",
+                                "description": "STRINGA DA 10000",
+                                "elementaryType": "STRING",
+                                "validations": [
+                                    {
+                                        "key": "stringMinLength",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "key": "stringMaxLength",
+                                        "value": "10000"
+                                    }
+                                ]
+                            },
+                            "dimensions": 0,
+                            "fieldLabel": "cognome cliente",
+                            "source": null,
+                            "version": null,
+                            "keyFields": null,
+                            "fields": null,
+                            "instances": null,
+                            "key": false
+                        },
+                        {
+                            "fieldName": "idCliente",
+                            "fieldType": {
+                                "name": "NUMERO_0_99",
+                                "cod": "BSTYP_10",
+                                "description": "NUMERI DA 0 A 99 INTERI",
+                                "elementaryType": "NUMBER",
+                                "validations": [
+                                    {
+                                        "key": "numberAfterComma",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "key": "numberBeforeComma",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "key": "numberIsPercentage",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "key": "numberMaxValue",
+                                        "value": "99.0"
+                                    },
+                                    {
+                                        "key": "numberMinValue",
+                                        "value": "0.0"
+                                    }
+                                ]
+                            },
+                            "dimensions": 0,
+                            "fieldLabel": "Id cliente",
+                            "source": null,
+                            "version": null,
+                            "keyFields": null,
+                            "fields": null,
+                            "instances": null,
+                            "key": false
+                        },
+                        {
+                            "fieldName": "eta",
+                            "fieldType": {
+                                "name": "NUMERO_0_99",
+                                "cod": "BSTYP_10",
+                                "description": "NUMERI DA 0 A 99 INTERI",
+                                "elementaryType": "NUMBER",
+                                "validations": [
+                                    {
+                                        "key": "numberAfterComma",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "key": "numberBeforeComma",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "key": "numberIsPercentage",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "key": "numberMaxValue",
+                                        "value": "99.0"
+                                    },
+                                    {
+                                        "key": "numberMinValue",
+                                        "value": "0.0"
+                                    }
+                                ]
+                            },
+                            "dimensions": 0,
+                            "fieldLabel": "Eta cliente",
+                            "source": null,
+                            "version": null,
+                            "keyFields": null,
+                            "fields": null,
+                            "instances": null,
+                            "key": false
+                        }
+                    ],
+                    "instances": [
+                        {
+                            "name": "cliente1",
+                            "dimensions": 0
+                        },
+                        {
+                            "name": "cliente2",
+                            "dimensions": 0
+                        }
+                    ],
+                    "key": false
+                },
+                {
+                    "fieldName": "Polizza",
+                    "fieldType": {
+                        "name": "POLIZZA",
+                        "cod": null,
+                        "description": "POLIZZA",
+                        "elementaryType": null,
+                        "validations": null
+                    },
+                    "dimensions": 0,
+                    "fieldLabel": "Polizza",
+                    "source": null,
+                    "version": null,
+                    "keyFields": null,
+                    "fields": [
+                        {
+                            "fieldName": "IdPolizza",
+                            "fieldType": {
+                                "name": "STRINGA_10000",
+                                "cod": "BSTYP_18",
+                                "description": "STRINGA DA 10000",
+                                "elementaryType": "STRING",
+                                "validations": [
+                                    {
+                                        "key": "stringMinLength",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "key": "stringMaxLength",
+                                        "value": "10000"
+                                    }
+                                ]
+                            },
+                            "dimensions": 0,
+                            "fieldLabel": "Id polizza",
+                            "source": null,
+                            "version": null,
+                            "keyFields": null,
+                            "fields": null,
+                            "instances": null,
+                            "key": false
+                        },
+                        {
+                            "fieldName": "ProdottoPolizza",
+                            "fieldType": {
+                                "name": "STRINGA_10000",
+                                "cod": "BSTYP_18",
+                                "description": "STRINGA DA 10000",
+                                "elementaryType": "STRING",
+                                "validations": [
+                                    {
+                                        "key": "stringMinLength",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "key": "stringMaxLength",
+                                        "value": "10000"
+                                    }
+                                ]
+                            },
+                            "dimensions": 0,
+                            "fieldLabel": "Prodotto polizza",
+                            "source": null,
+                            "version": null,
+                            "keyFields": null,
+                            "fields": null,
+                            "instances": null,
+                            "key": false
+                        }
+                    ],
+                    "instances": [
+                        {
+                            "name": "polizza1",
+                            "dimensions": 0
+                        },
+                        {
+                            "name": "polizza2",
+                            "dimensions": 0
+                        }
+                    ],
+                    "key": false
+                }
+            ]
+        }
+    ]
+}
