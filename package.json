@@ -3,7 +3,7 @@
     "version": "0.0.1-SNAPSHOT",
     "description": "Webapplication for browser-based process implemenation.",
     "authors": [
-        "Emanuele Pavan <emanuele.pav@gmail.com>",
+        "Emanuele Pavan <emanuele.pav@gmail.com>"
     ],
     "license": "MIT",
     "private": true,
@@ -75,16 +75,17 @@
     "dependencies": {
         "angular": "1.3.20",
         "angular-toastr": "^2.1.1",
-        "camunda-cmmn-moddle": "^0.2.0",
-        "cmmn-js": "^0.7.4",
-        "cmmn-js-properties-panel": "^0.2.2",
-        "cmmn-moddle": "^0.3.0",
         "bpmn-js": "^0.19.0",
         "bpmn-js-debug-overlay": "^0.2.0",
         "bpmn-js-in-color": "github:bpmn-io/bpmn-js-in-color",
         "bpmn-js-properties-panel": "^0.8.2",
-        "camunda-bpmn-moddle": "^0.7.2",
         "bpmn-moddle": "^0.13.0",
+        "camunda-bpmn-moddle": "^0.7.2",
+        "camunda-cmmn-moddle": "^0.2.0",
+        "chartist": "0.10.1",
+        "cmmn-js": "^0.7.4",
+        "cmmn-js-properties-panel": "^0.2.2",
+        "cmmn-moddle": "^0.3.0",
         "diagram-js": "^0.18.0",
         "diagram-js-direct-editing": "^0.17.1",
         "diagram-js-origin": "^0.15.1",
@@ -92,8 +93,7 @@
         "inherits": "^2.0.1",
         "jquery": "^2.1.1",
         "lodash": "^3.0.1",
-        "min-dom": "^0.2.0",
-        "chartist": "0.10.1"
+        "min-dom": "^0.2.0"
     },
     "resolutions": {
         "angular": "1.3.20"

@@ -166,7 +166,10 @@ module.exports = function (grunt) {
                     {expand: true, cwd: 'assets/images', src: ['favicon.ico'], dest: 'dist'},
 
                     //font
-                    {expand: true, cwd: 'assets/fonts', src: ['*'], dest: 'dist/fonts'}
+                    {expand: true, cwd: 'assets/fonts', src: ['*'], dest: 'dist/fonts'},
+
+                    //Mocks
+                    {expand: true, cwd: 'mocks/', src: ['*'], dest: 'dist/mocks'}
 
                 ]
             },
